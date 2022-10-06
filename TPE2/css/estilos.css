@@ -4,54 +4,113 @@
     text-decoration: none;
     border: none;
     outline: none;
+    font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /*Cambiar*/
+
  }
 
  body {
     background-color: #4A0065;
+
  }
 
  header {
      width: 100%;
-     height: 75px;
+     max-height: 45px;
      background-color: #6E6BBE;
      display: flex;
      justify-content: space-between;
      top: 0;
      position: fixed;
+     z-index: 1;
  }
 
  header img.logoPagina {
-    width: 60px;
+    width: 40px;
+    height: 40px;
     margin: 3px 10px;
 }
 
+header input {
+    display: none;
+}
+
  header img.menuHamburguesa {
-     width: 50px;
+     width: 35px;
      margin: 3px 10px;
  }
+ 
+  header div.divImagenMenuHamburguesa {
+      display: flex;
+      justify-content: flex-end;
+  }
 
+
+/*Oculto y muestro el menu desplegable*/
  header div.menuDesplegable {
-    background-color: red;
-    width: 500px;
     display: none;
  }
 
- header div.divImagenMenuHamburguesa {
-     display: flex;
-     justify-content: flex-end;
+ header div.mostrarMenuDesplegable { /*CON JS*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #6E6BBE;
+    list-style: none;
+    margin: 0;
+    opacity: 100%;
  }
 
- header div.menuDesplegable ul{
+ header div.mostrarMenuDesplegable ul{
     list-style: none;
     text-align: center;
+    height: 95%;
  }
 
- header div.menuDesplegable ul li{
+ header div.mostrarMenuDesplegable ul li{
     color: #FEF7F7;
+    font-size: 18px;
+    margin: 40px 0 10px 0;
+ }
+
+ .ocultarLogoMenuHamburguesa { /*CON JS*/
+     display: none;
+ }
+
+ header div.divImagenCruz {
+     display: flex;
+     justify-content: flex-end;
+     align-items: flex-end;
+ }
+
+ .cruz {
+    width: 40px;
+     margin: 5px 7px 0 0;
+ }
+
+ header div.listasRedesSocialesMenu{
+    width: 100%;
+ }
+
+ header div.listasRedesSocialesMenu ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+ }
+
+ header div.listasRedesSocialesMenu img{
+    width: 35px;
+    margin: 5px 5px;
+ }
+
+ .oscurecerFondo {
+     opacity: 100%;
  }
 
  main {
-     margin: 100px 0 0 0;
+     width: 100%;
+     margin: 0;
  }
  main h2 {
     width: 40%;
@@ -59,52 +118,90 @@
     color: #D8D6FF;
     text-align: center;
     padding: 0%;
-    margin: 50px auto 10px auto ;
+    margin: 15px auto 2px auto ;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    font-size: 62px;
-    font-family: 'Times New Roman', Times, serif; /*Cambiar*/
- }
+    font-size: 16px;
+}
 
  main section.seccionBannerJuegoEstreno {
      width: 100%;
-     box-shadow: initial; /*Cambiar*/
  }
 
  main section.seccionBannerJuegoEstreno img{
+     position: relative;
+     top: 12px;
     width: 100%;
-    height: 430px;
+    height: 160px;
+    margin: 27px 0 0 0;
+    opacity: 60%;
+}
+
+main section.seccionBannerJuegoEstreno .contenidoBanner{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+main .contenidoBanner h2 {
+    width: 100%;
+    font-size: 25px;
+    color: #FEF7F7;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: start;
+    margin: 0 0 1px 0;
+
+}
+
+main .contenidoBanner p {
+    display: none;
+    font-size: 12px;
+    color: #FEF7F7;
+    margin: 2px 0 4px 0;
+}
+
+main .contenidoBanner button {
+    width: 100px;
+    height: 20px;
+    font-size: 16px;
+    color: #FEF7F7;
+    background-color: #6E6BBE;
+    border-radius: 30px;
+    margin: 4px auto 0 auto;
+    padding-bottom: 23px;
 }
 
 main section.seccionRecomendados {
-    width: 95%;
-    background-color: #1D1D5C;
-    border: 1px solid #FEF7F7;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0px auto 40px 0;
 }
 
 main section.seccionJuegos {
-    width: 95%;
-    background-color: #6E6BBE;
-    margin: 0 auto;
-    border: 1px solid #FEF7F7;
+    width: 100%;
+    margin: 0px auto 40px 0;
 }
 
 main section ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 5px;
     overflow-y: auto;
-    flex-wrap: nowrap;
+    
 }
 
 main section ul li {
-    width: 250px;
+    width: 130px;
+    height: 160px;
     background-color: #B8B4FE;
-    margin: 50px 10px;
+    margin: 2px;
     border-radius: 20px;
-    padding: 10px;
+    padding: 2px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -114,80 +211,67 @@ main section ul li {
 }
 
 main section ul li img {
-    width: 200px;
-    height: 200px;
+    width: 75%;
+    height: 60%;
 }
 
 main section ul li h3 {
-    font-size: 36px;
+    font-size: 12px;
     margin: 0 auto;
     color: #4A0065;
 }
 
 main section ul li button {
-    width: 152px;
-    height: 56px;
-    font-size: 36px;
+    width: 50px;
+    height: 23px;
+    font-size: 15px;
     color: #FEF7F7;
-    background-color: #78D694;
-}
-
-main section ul::-webkit-scrollbar{
-    width: 7px;
-    height: 50px;
-    background-color: #6E6BBE;
-}
-
-main section.seccionRecomendados ul::-webkit-scrollbar{
-    background-color: #1D1D5C;
-}
-
-main section ul::-webkit-scrollbar-thumb{
-    width: 5px;
-    background-image: url("../imagenes/barra.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: #78d694cc;
 }
 
  footer {
     width: 100%;
     background-color: #272727;
-    margin: 50px 0 0 0;
+    margin: 10px 0 0 0;
  }
 
  footer img.logoPagina {
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     margin: auto 0;
+    margin: 3px 0 0 0;
  }
 
  footer div.contenidoFooter {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
  }
 
  footer h3 {
-    font-size: 36px;
+    font-size: 15px;
     color: #FEF7F7;
-    margin: 30px 0 0 0;
+    margin: 10px 0 0 0;
     text-align: center;
+    display: none;
  }
 
  footer div.listasEnlaces {
     display: flex;
     justify-content: space-around;
-    margin: 0 0 15px 0;
+    margin: 0 0 5px 0;
  }
 
  footer div.listasEnlaces ul{
     list-style: none;
-    margin: 5px 20px;
+    margin: 5px 5px;
  }
 
  footer div.listasEnlaces ul li{
     color: #FEF7F7;
-    margin: 10px 5px;
-    font-size: 25px;
+    margin: 4px 5px;
+    font-size: 12px;
     text-align: center;
  }
 
@@ -198,16 +282,16 @@ main section ul::-webkit-scrollbar-thumb{
  }
 
  footer div.redesSociales ul{
+    display: flex;
     list-style: none;
-    margin: 5px 20px;
  }
 
  footer div.redesSociales ul li{
-    margin: 10px 5px;
+    margin: 0 4px;
  }
 
  footer div.redesSociales ul li img{
-    width: 60px;
+    width: 30px;
  }
 
  footer div.copiright {
@@ -215,7 +299,180 @@ main section ul::-webkit-scrollbar-thumb{
  }
 
  footer div.copiright h3 {
+     display: block;
      color: #272727;
-     font-size: 20px;
-     padding: 23px 0;
+     font-size: 12px;
+     padding: 5px 0;
+ }
+
+ @media only screen and (min-width: 600px){
+    header {
+        max-height: 87px;
+    }
+
+    header img.logoPagina {
+        width: 87px;
+        height: 83px;
+    }
+    
+    header input {
+        width: 365px;
+        height: 40px;
+        margin: auto 0;
+        display: block;
+        background-color: #FEF7F7;
+        border: solid 3px black;
+        border-radius: 50px;
+        padding-left: 20px;
+    }
+
+     header img.menuHamburguesa {
+         width: 53px;
+         height: 59px;
+         margin: auto 0;
+     }
+
+     /*Oculto y muestro el menu desplegable*/
+
+ header div.mostrarMenuDesplegable { /*CON JS*/
+    width: 42%;
+ }
+
+ header div.mostrarMenuDesplegable ul li{
+    font-size: 24px;
+    margin: 40px
+ }
+
+ .cruz {
+     width: 70px;
+     margin: auto 0;
+ }
+
+
+
+ header div.listasRedesSocialesMenu img{
+    width: 60px;
+ }
+
+ .oscurecerFondo {
+     opacity: 60%;
+ }
+
+     main section.seccionBannerJuegoEstreno img{
+        height: 418px;
+        margin: 27px 0 10px 0;
+    }
+
+    main section.seccionBannerJuegoEstreno .contenidoBanner{
+        top: 150px;
+        left: 100px;
+    }
+    
+    main .contenidoBanner h2 {
+        font-size: 40px;
+        margin: 0 0 3px 0;
+    }
+    
+    main .contenidoBanner p {
+        display: block;
+        font-size: 24px;
+        margin: 5px 0 8px 0;
+    }
+    
+    main .contenidoBanner button {
+        width: 148px;
+        height: 30px;
+        font-size: 24px;
+        margin: 8px 0 0 0;
+        padding-bottom: 35px;
+    }
+
+     main h2 {
+         font-size: 24px;
+     }
+
+     main section ul li {
+        width: 203px;
+        height: 225px;
+        margin: 0 5px;
+
+     }
+
+     main section ul li img {
+        width: 163px;
+        height: 145px;
+    }
+
+    main section ul li h3 {
+        font-size: 16px;
+    }
+    
+    main section ul li button {
+        width: 114px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    footer img.logoPagina {
+        width: 100px;
+        height: 100px;
+     }
+
+     footer div.contenidoFooter {
+        flex-direction: row;
+     }
+    
+     footer h3 {
+        font-size: 36px;
+        margin: 30px 0 0 0;
+        display: block;
+     }
+    
+     footer div.contenidoFooter {
+        justify-content: space-around;
+     }
+    
+     footer h3 {
+        font-size: 36px;
+        margin: 30px 0 0 0;
+        text-align: center;
+     }
+    
+     footer div.listasEnlaces {
+        margin: 0 0 15px 0;
+     }
+    
+     footer div.listasEnlaces ul{
+        margin: 5px 20px;
+     }
+    
+     footer div.listasEnlaces ul li{
+        margin: 10px 5px;
+        font-size: 20px;
+     }
+    
+     footer div.redesSociales ul{
+        display: block;
+        list-style: none;
+        margin: 5px 20px;
+     }
+    
+     footer div.redesSociales ul li{
+        margin: 32px 5px;
+     }
+    
+     footer div.redesSociales ul li img{
+        width: 50px;
+        height: 50px;
+     }
+    
+     footer div.copiright {
+         background-color: #AEADBF;
+     }
+    
+     footer div.copiright h3 {
+        font-size: 20px;
+        padding: 4px 0;
+     }
+  
  }

@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/menuDesplegable.js"></script>
     <title>Inicio</title>
 </head>
 <body>
     <header>
         <img class="logoPagina" src="imagenes/logoPagina.png" alt="Logo pagina">
-        <img class="menuHamburguesa" src="imagenes/menuHamburguesa.png" alt="Menu hamburguesa">
-        <div class="menuDesplegable">
-            <div class="divImagenMenuHamburguesa">
-                <img class="menuHamburguesa" src="imagenes/menuHamburguesa.png" alt="Menu hamburguesa">    
+        <input type="text" placeholder="Buscar juego...">
+        <img class="menuHamburguesa" id="menuHamburguesa" src="imagenes/menuHamburguesa.png" alt="Menu hamburguesa">
+        
+        <div class="menuDesplegable" id="menuDesplegable">
+            <div class="divImagenCruz">
+                <img class="cruz" id="cruz" src="imagenes/cruz.png" alt="Cruz">    
             </div>            
             <ul>
                 <li>Home</li>
@@ -21,16 +24,30 @@
                 <li>Estrenos</li>
                 <li>Categorias</li>
                 <li>Comunidad</li>
-                <li><input type="text" placeholder="Buscar..."></li>
             </ul>
+            
+            <div class="listasRedesSocialesMenu">
+                <ul>
+                    <li><img src="imagenes/fb.png" alt="Facebook"></li>
+                    <li><img src="imagenes/tw.png" alt="Twitter"></li>
+                    <li><img src="imagenes/ig.png" alt="Instagram"></li>
+                    <li><img src="imagenes/yt.png" alt="Youtube"></li>
+                </ul>
+            </div>
         </div>
     </header>
 
     <main>
-
-        <h2>Estreno: Cars 3</h2>
         <section class="seccionBannerJuegoEstreno">
             <img src="imagenes/bannerCars 3.jpg" alt="Baner juego estreno">
+            <div class="contenidoBanner">
+                <h2>CARS 3 - Drive to win</h2>
+                <p> El nuevo juego basado en la pelicula de disney llega con nuevas novedades. <br>
+                    Nuevos personajes, circuitos y modos de juegos. <br>
+                    ¡Elegi a tu personaje favorito y gana la copa Piston!
+                </p>
+                <button type="button">Ver más</button>
+            </div>    
         </section>
 
         <h2>Recomendados</h2>
