@@ -6,11 +6,14 @@
     border: none;
     outline: none;
     font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /*Cambiar*/
-
  }
 
  li, h1, h2, h3, h4, h5, h6, p, button{
      color: #FEF7F7;
+ }
+
+ p{
+     font-size: 10px;
  }
 
  header, header div.divImagenMenuHamburguesa, header div.mostrarMenuDesplegable, header div.divImagenCruz, 
@@ -32,8 +35,19 @@ header input,  header div.menuDesplegable, .ocultarLogoMenuHamburguesa/*CON JS*/
 }
 
 body {
-    background-color: #4A0065;
+
+    background: #4A0065;
+    background: linear-gradient(0deg, #1F0328 0%,#4A0065 100%);
+    transition: 1s;
  }
+
+ .juegoEstreno{
+    background: #4A0065;
+    background: linear-gradient(0deg, #320000 0%,#5C0000 100%);
+    transition: 1s;
+ }
+
+/*************************************HEADER*************************************************************/
 
  header {
      max-height: 45px;
@@ -41,7 +55,7 @@ body {
      justify-content: space-between;
      top: 0;
      position: fixed;
-     z-index: 1;
+     z-index: 10;
  }
 
  header img.logoPagina {
@@ -60,27 +74,30 @@ body {
   }
 
  header div.mostrarMenuDesplegable { /*CON JS*/
-     
     flex-direction: column;
-    justify-content: space-between;
-     
+    justify-content: space-between; 
     height: 100%;
+
     background-color: #6E6BBE;
     opacity: 100%;
  }
 
  header div.mostrarMenuDesplegable ul{
     text-align: center;
-    height: 95%;
+    height: 250px;
  }
 
  header div.mostrarMenuDesplegable ul li{
     font-size: 18px;
-    margin: 40px 0 10px 0;
+    margin: 20px 0 10px 0;
+
+ }
+
+ header div.mostrarMenuDesplegable ul a li:hover{
+    color: #B8B4FE;
  }
 
  header div.divImagenCruz {
-      
      justify-content: flex-end;
      align-items: flex-end;
  }
@@ -114,6 +131,114 @@ body {
     border-bottom-left-radius: 50px;
     font-size: 16px;
 }
+
+/******************JUEGO ESTRENO***************/
+.seccionBannerPaginaJuegoEstreno {
+    position: relative;
+    top: 35px;
+    left: 0;
+    margin: 10px 0 50px 0;
+}
+
+
+.bannerEstreno1, .bannerEstreno2 {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.bannerEstreno2,  .seccionBannerPaginaJuegoEstreno button, 
+.seccionBannerPaginaJuegoEstreno .car, .seccionBannerPaginaJuegoEstreno .polvo{
+    position: absolute;
+    z-index: 2;
+}
+
+.seccionBannerPaginaJuegoEstreno button{
+    top: 30%;
+    left: 35%;
+    padding: 10px;
+    background: rgb(202,3,3);
+    background: linear-gradient(0deg, rgba(202,3,3,1) 0%, rgba(239,32,32,1) 100%);
+    transition: 1s;
+    opacity: 0.4;
+    z-index: 3;
+}
+
+.seccionBannerPaginaJuegoEstreno button:hover{
+    transition: 1s;
+    opacity: 1;
+}
+
+.seccionBannerPaginaJuegoEstreno .car{
+    top: 68%;
+    left: 40%;
+    width: 25%;
+    z-index: 4;
+}
+
+.seccionBannerPaginaJuegoEstreno .polvo{
+    z-index: 3;
+    left: 10%;
+    top: 19%;
+    width: 80%;
+}
+
+.seccionesCars{
+    position: relative;
+    width: 100%;
+    top: 5px;
+    left: 0;
+    margin-bottom: 50px;
+}
+
+.tituloSeccion {
+    position: absolute;
+    width: 100%;
+}
+
+.seccionesCars .tituloSeccion img {
+    position: relative;
+    width: 70%;
+    top: 0;
+    left: 17%;
+    margin: 0;
+    z-index: 1;
+}
+.tituloSeccion h2 {
+    position: absolute;
+    top: 0%;
+    left: 32%;
+    z-index: 2;
+}
+
+.contenidoSeccion{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    top: 0px;
+    left: 0;
+}
+
+.seccionesCars img {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    left: 0;
+    margin: 0px 0;
+    z-index: 1;
+}
+.seccionesCars p{
+    position: absolute;
+    width: 49%;
+    top: 29%;
+    left: 50%;
+    margin: 0px 0;
+    z-index: 2;
+}
+
+/****************************************************/
 
  main section.seccionBannerJuegoEstreno img{
     position: relative;
@@ -170,7 +295,6 @@ main section ul li {
     background-color: #B8B4FE;
     margin: 2px;
     border-radius: 20px;
-    padding: 2px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -195,6 +319,8 @@ main section ul li button {
     font-size: 15px;
     background-color: #78d694cc;
 }
+
+ /*************************************FOOTER*************************************************************/
 
  footer {
     background-color: #272727;
@@ -233,6 +359,14 @@ main section ul li button {
     margin: 5px 5px;
  }
 
+ footer div.listasEnlaces ul a li{
+    color: #B8B4FE;
+ }
+
+ footer div.listasEnlaces ul a li:hover{
+    color: #6E6BBE;
+ }
+
  footer div.listasEnlaces ul li{
     margin: 4px 5px;
     font-size: 12px;
@@ -257,10 +391,7 @@ main section ul li button {
      font-size: 12px;
      padding: 5px 0;
  }
-
- 
   /**************************************************************************************************/
-
 
  @media only screen and (min-width: 600px){
     header {
@@ -290,11 +421,17 @@ main section ul li button {
      }
 
      /*Oculto y muestro el menu desplegable*/
-
     header div.mostrarMenuDesplegable { /*CON JS*/
         width: 42%;
     }
 
+    .fondoOscuro{
+        border: #1F0328;
+        margin: 100px;
+        color: rgba(0, 0, 0, 0.945) ;
+        width: 100px;
+        height: 100px;
+    }
     header div.mostrarMenuDesplegable ul li{
         font-size: 24px;
         margin: 40px
