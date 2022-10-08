@@ -476,3 +476,268 @@ main section ul li button {
      }
   
  }
+
+
+ /*4 en linea*/
+
+ main div.titulo {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+ main div.titulo img {
+     width: 50%;
+ }
+
+ main div.titulo h1 {
+    text-align: center;
+    color: #FEF7F7;
+    font-size: 40px;
+    position: absolute;
+    top: 43%;
+    left: 37%;
+}
+main div.contenidoJuego {
+    width: 100%;
+}
+
+main div.imagenJuego {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+}
+
+
+main div.imagenJuego img {
+    width: 100%;
+    opacity: 70%;
+}
+
+main div.imagenJuego button {
+    width: 215px;
+    height: 70px;
+    color: #FEF7F7;
+    background-color: #78d694;
+    position: absolute;
+    top: 47%;
+    left: 43%;
+    margin: auto;
+    font-size: 24px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+main div.contenidoJuego {
+    display: flex;
+    justify-content: center;
+}
+
+main div.botones4enLinea {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    width: 3%;
+    margin: 0 0 0 5px;
+}
+main div.botones4enLinea img{
+    width: 40px;
+    margin: 5px;
+}
+
+main div.botones4enLinea div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section.galeria {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+main section.galeria img{
+    width: 13%;
+    margin: 4px;
+}
+
+main section.instrucciones div.titulo{
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.instrucciones div.titulo img{
+    width: 100%;
+}
+
+main section.instrucciones div.titulo h2{
+    position: absolute;
+    top: 27%;
+    left: 28%;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+main section.instrucciones div.contenido{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.instrucciones div.contenido img{
+    width: 100%;
+    height: 500px;
+}
+
+main section.instrucciones div.contenido p{
+    position: absolute;
+    background-color: transparent;
+    font-size: 27px;
+    color: #FEF7F7;
+}
+
+main section.instrucciones div.contenido p.p1{
+    top: 15%;
+    left: 22%;
+    width: 65%;
+}
+
+main section.instrucciones div.contenido p.p2{
+    top: 40%;
+    left: 18%;
+    width: 65%;
+}
+
+main section.instrucciones div.contenido :last-child{
+    top: 70%;
+    left: 14%;
+    width: 65%;
+}
+
+main section.comunidad {
+    background-color: #D8D6FF;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+main section.comunidad div.titulo {    
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.comunidad div.titulo img{
+    width: 100%;
+}
+
+main section.comunidad div.titulo h2{
+    position: absolute;
+    top: 27%;
+    left: 28%;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+main section.comunidad div.escribirComentario { /*COMENTARIOS*/
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+main section.comunidad div.escribirComentario  img{
+    width: 6%;
+    margin-right: 5px;
+}
+
+main section.comunidad div.escribirComentario  input{
+    width: 91%;
+    border: solid rgb(138, 138, 138) 3px;
+    background-color: #FEF7F7;
+    height: 35px;
+    margin: auto 0;
+    padding-left: 9px;
+    color:  rgb(138, 138, 138) 3px;;
+}
+
+main section.comunidad div.escribirComentario  button{
+    background-color: #272727;
+    color: #FEF7F7;
+    height: 35px;
+    margin-left: 85%;
+    padding: 0 6px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+main section.comunidad div.comentarios {
+    width: 50%;
+    margin: 0 auto;
+}
+
+main section.comunidad div.comentarios div.comentario{
+    border-top: 1px solid #a5a3a3;
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido{
+    display: flex;
+    justify-content: space-between;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido div{
+    display: flex;
+    justify-content: start;
+    width: 88%;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido img{
+    width: 6%;
+    margin-right: 4px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido p.hora{
+    font-size: 11px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido span{
+    font-size: 18px;
+    font-weight: bold;
+    color: #272727;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios img{
+    width: 15px;
+    margin-right: 7px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios p{
+    margin-right: 7px;
+    color: #969393;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios h4{
+    font-size: 12px;
+    color: #969393;
+    margin-left: 7px;
+}
+
+
