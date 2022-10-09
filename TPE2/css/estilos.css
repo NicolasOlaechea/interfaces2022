@@ -6,7 +6,77 @@
     border: none;
     outline: none;
     font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /*Cambiar*/
- }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.contenedorLoader {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    top:0;
+    position: fixed;
+    z-index: 10000;
+}
+
+.ocultarContenedorLoader {
+    display: none;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: solid 10px #FEF7F7;
+    border-bottom: solid transparent 10px;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+    margin: 15px;
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.barra {
+    width: 15%;
+    height: 2%;
+    background-color: rgb(172, 172, 172);
+    border-radius: 50px;
+
+}
+
+.progreso {
+    width: 0%;
+    height: 100%;
+    background-color: #FEF7F7;
+    border-radius: 50px;
+    animation: aumentar 5s linear infinite;
+}
+
+@keyframes aumentar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
 
  li, h1, h2, h3, h4, h5, h6, p, button{
      color: #FEF7F7;
@@ -50,18 +120,26 @@ body {
 /*************************************HEADER*************************************************************/
 
  header {
+     
      max-height: 45px;
      background-color: #6E6BBE;
      justify-content: space-between;
-     top: 0;
+     top:0;
      position: fixed;
      z-index: 10;
  }
 
+ .ocultarHeader {
+     z-index: -1000;
+ }
  header img.logoPagina {
     width: 40px;
     height: 40px;
     margin: 3px 10px;
+}
+
+.logoPagina, img.menuHamburguesa, .cruz:hover {
+    cursor: pointer;
 }
 
  header img.menuHamburguesa {
@@ -121,12 +199,12 @@ body {
  }
 
  main h2 {
-    width: 40%;
+    width: fit-content;
     background-color: #873FA0;
     color: #D8D6FF;
     text-align: center;
-    padding: 0%;
-    margin: 15px auto 2px auto ;
+    padding: 3px 20px;
+    margin: 14px auto 2px auto ;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     font-size: 16px;
@@ -139,7 +217,6 @@ body {
     left: 0;
     margin: 10px 0 50px 0;
 }
-
 
 .bannerEstreno1, .bannerEstreno2 {
     width: 100%;
@@ -269,6 +346,10 @@ main .contenidoBanner p {
     margin: 2px 0 4px 0;
 }
 
+main .contenidoBanner a {
+    color: #FEF7F7;
+}
+
 main .contenidoBanner button {
     width: 100px;
     height: 20px;
@@ -280,13 +361,38 @@ main .contenidoBanner button {
 }
 
 main section.seccionRecomendados, main section.seccionJuegos {
-    margin: 0px auto 40px 0;
+    margin: 0px auto 20px 0;
+    position: relative;
+}
+
+main section .flecha {
+    width: 20px;
+    padding: 15px;
+    background-color: #FEF7F7;
+    border-radius: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+main section .flechaIzquierda {
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main section .flechaDerecha {
+    right: 40px;
+    top: 50%;
+    transform: translate(50%, -50%);
 }
 
 main section ul {
+    display: flex;
     justify-content: space-between;
     padding: 5px;
-    overflow-y: auto;
+    overflow: hidden;
+    margin: 0 32px;
+    scroll-behavior: [auto smooth];
 }
 
 main section ul li {
@@ -299,7 +405,10 @@ main section ul li {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    flex: 1 0 auto
+}
+
+main section ul li img, h3, button:hover {
+    cursor: pointer;
 }
 
 main section ul li img {
@@ -313,11 +422,42 @@ main section ul li h3 {
     color: #4A0065;
 }
 
-main section ul li button {
+.divContenidoBtnComprar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divContenidoBtnComprar p{
+    font-size: 20px;
+    color: #FEF7F7;
+    margin: 0 2px;
+    padding-bottom: 3px;
+}
+
+.divContenidoBtnComprar span{
+    font-size: 28px;
+    color: #E5E84D;
+    padding-bottom: 3px;
+}
+
+main section ul li button, main section ul li button.btnComprar {
     width: 50px;
     height: 23px;
     font-size: 15px;
     background-color: #78d694cc;
+    text-align: center;
+    margin: 0 2px 5px 2px;
+    border-radius: 10px;
+    box-shadow: 0px 15px 10px -15px #111; 
+}
+
+main section ul li button.btnComprar {
+    background-color: #FEF7F7;
+    color: #272727;
+    width: fit-content;
+    padding: 2px 3px;
+    margin-top: 7px;
 }
 
  /*************************************FOOTER*************************************************************/
@@ -344,6 +484,10 @@ main section ul li button {
     font-size: 15px;
     margin: 10px 0 0 0;
     text-align: center;
+ }
+
+ footer a{
+     color: #FEF7F7
  }
 
  footer div.listasEnlaces, footer div.listasRedesSociales, footer div.redesSociales ul{
@@ -450,14 +594,19 @@ main section ul li button {
         opacity: 60%;
     }
 
+    main section.seccionBannerJuegoEstreno{
+        position: relative;
+    }
+
      main section.seccionBannerJuegoEstreno img{
         height: 418px;
         margin: 27px 0 10px 0;
     }
 
     main section.seccionBannerJuegoEstreno .contenidoBanner{
-        top: 150px;
-        left: 100px;
+        position: absolute;
+        top: 30%;
+        left: 10%;
     }
     
     main .contenidoBanner h2 {
@@ -481,6 +630,7 @@ main section ul li button {
 
      main h2 {
          font-size: 24px;
+         padding: 5px 20px;
      }
 
      main section ul li {
@@ -491,7 +641,7 @@ main section ul li button {
      }
 
      main section ul li img {
-        width: 163px;
+        width: 150px;
         height: 145px;
     }
 
@@ -499,10 +649,15 @@ main section ul li button {
         font-size: 16px;
     }
     
-    main section ul li button {
+    main section ul li button, main section ul li button.btnComprar {
         width: 114px;
         height: 36px;
         font-size: 24px;
+    }
+
+    main section .flecha {
+        width: 25px;
+        padding: 20px;
     }
 
     footer img.logoPagina {
@@ -785,12 +940,14 @@ main section.comunidad div.comentarios div.comentario{
 main section.comunidad div.comentarios div.comentario div.contenido{
     display: flex;
     justify-content: space-between;
+    color: #1F0328;
 }
 
 main section.comunidad div.comentarios div.comentario div.contenido div{
     display: flex;
     justify-content: start;
     width: 88%;
+
 }
 
 main section.comunidad div.comentarios div.comentario div.contenido img{
@@ -806,6 +963,11 @@ main section.comunidad div.comentarios div.comentario div.contenido span{
     font-size: 18px;
     font-weight: bold;
     color: #272727;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido p{
+    color: #272727;
+    font-size: 16px;
 }
 
 main section.comunidad div.comentarios div.comentario div.botonesComentarios {
