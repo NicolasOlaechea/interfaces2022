@@ -52,11 +52,10 @@ button:hover {
 }
 
 .barra {
-    width: 15%;
-    height: 2%;
+    width: 26%;
+    height: 1%;
     background-color: rgb(172, 172, 172);
     border-radius: 50px;
-
 }
 
 .progreso {
@@ -729,11 +728,11 @@ main section ul li button.btnComprar {
     
     header input {
         width: 365px;
-        height: 40px;
+        height: 30px;
         margin: auto 0;
         display: block;
         background-color: #FEF7F7;
-        border: solid 3px black;
+        border: solid 1px black;
         border-radius: 50px;
         padding-left: 20px;
     }
@@ -855,6 +854,8 @@ main section ul li button.btnComprar {
     main .contenidoBanner h2 {
         font-size: 40px;
         margin: 0 0 3px 0;
+        text-align: start;
+        padding: 0;
     }
     
     main .contenidoBanner p {
@@ -985,10 +986,54 @@ main section ul li button.btnComprar {
 
 
  /*4 en linea*/
+section.breadcrumb{
+    width: fit-content;
+    position: relative;
+    top: 70px;
+    left: 30px;
+}
+
+section.breadcrumb ul{
+    display: flex;
+    list-style: none;
+}
+
+section.breadcrumb li{
+    list-style: none;
+    position: relative;
+}
+
+section.breadcrumb li p{
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+
+section.breadcrumb img{
+    width: 100px;
+    height: 40px;
+    opacity: 40%;
+}
+
+section.breadcrumb img.home{
+    width: 70px;
+}
+
+section.breadcrumb img:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+section.breadcrumb p:hover {
+    cursor: pointer;
+}
+
 
  main div.titulo {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 35px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -1047,29 +1092,90 @@ main div.botones4enLinea {
     flex-direction: column;
     justify-content: initial;
     width: 3%;
-    margin: 0 0 0 5px;
 }
-main div.botones4enLinea img{
+
+div.botones4enLinea img{
     width: 40px;
     margin: 5px;
 }
 
-main div.botones4enLinea div{
+.favorito {
+    opacity: 40%;
+}
+
+.seleccionado {
+    opacity: 100%;
+}
+
+main div.botones4enLinea div.contenedorCompartir{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main section.galeria {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 0;
+.ocultar{
+    display: none;
 }
 
-main section.galeria img{
-    width: 13%;
-    margin: 4px;
+div.botones4enLinea img:hover{
+    cursor: pointer;
+    animation: ease-in;
+}
+
+main section.slider {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+}
+
+main section.slider img{
+    width: 200px;
+}
+
+main section.slider ul.galeria {
+    display: flex;
+    animation: cambio 20s infinite;
+    width: 400%;
+}
+
+.comentario span {
+    font-size: 6px;
+}
+
+.comentario img {
+    width: 12px;
+    border-radius: 50%;
+}
+
+div.comentario div.contenido img{
+    width: 30px;
+    height: 43px;
+}
+
+.comentario p {
+    font-size: 15px;
+}
+
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+main section.slider ul.galeria li {
+    width: 200px;
+    list-style: none;
+    background-color: transparent;
 }
 
 main section.instrucciones div.titulo{
@@ -1084,7 +1190,7 @@ main section.instrucciones div.titulo img{
 
 main section.instrucciones div.titulo h2{
     position: absolute;
-    top: 27%;
+    top: 23%;
     left: 28%;
     background-color: transparent;
     font-size: 35px;
@@ -1132,7 +1238,7 @@ main section.comunidad {
     margin: 0 auto;
     margin-top: 15px;
     padding-bottom: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 main section.comunidad div.titulo {    
@@ -1147,7 +1253,7 @@ main section.comunidad div.titulo img{
 
 main section.comunidad div.titulo h2{
     position: absolute;
-    top: 27%;
+    top: 23%;
     left: 28%;
     background-color: transparent;
     font-size: 35px;
@@ -1240,6 +1346,10 @@ main section.comunidad div.comentarios div.comentario div.botonesComentarios {
 main section.comunidad div.comentarios div.comentario div.botonesComentarios img{
     width: 15px;
     margin-right: 7px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios img:hover{
+    cursor: pointer;
 }
 
 main section.comunidad div.comentarios div.comentario div.botonesComentarios p{

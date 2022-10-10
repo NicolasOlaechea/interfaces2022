@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/menuDesplegable.js"></script>
+    <script src="js/comportamiento.js"></script>
+    <script src="js/likesComentarios.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -37,6 +39,14 @@
         </div>
     </header>
 
+    <section class="breadcrumb">
+        <ul>
+            <li><img src="imagenes/bc1.png" alt="breadcrumb" class="home"></li>
+            <li><img src="imagenes/bc2.png" alt="breadcrumb"><p>Juegos</p></li>
+            <li><img src="imagenes/bc3.png" alt="breadcrumb"><p>4 en linea</p></li>
+        </ul>
+    </section>
+
     <main>
         <div>
             <div class="titulo">
@@ -51,26 +61,86 @@
                 </div>
     
                 <div class="botones4enLinea">
-                    <img src="imagenes/favorito.png" alt="favorito">
-                    <div>
-                        <img src="imagenes/cruz.png" alt="cruz">
+                    <img src="imagenes/favorito.png" class="favorito" id="favorito" alt="favorito">
+                    <img src="imagenes/compartir.png" id="compartir" alt="compartir" class="compartir">
+                    
+                    <div id="contenedorCompartir" class="ocultar">
                         <img src="imagenes/facebook.png" alt="facebook">
                         <img src="imagenes/instagram.png" alt="instagram">
                         <img src="imagenes/twitter.png" alt="twitter">
                         <img src="imagenes/email.png" alt="gmail">
                         <img src="imagenes/enviar-mensaje.png" alt="mensaje">
+                        <img src="imagenes/youtube.png" alt="youtube">
+                        <img src="imagenes/discord.png" alt="discord">
+                        <img src="imagenes/whatsapp.png" alt="whatsapp">
                     </div>
             </div>
             </div>
         </div>
-
-        <section class="galeria">
-            <img src="imagenes/boca.png" alt="">
-            <img src="imagenes/river.jpg" alt="">
-            <img src="imagenes/4enlinea1.png" alt="">
-            <img src="imagenes/4enlinea2.jpg" alt="">
-            <img src="imagenes/4enlinea3.png" alt="">
-            <img src="imagenes/4enlinea4.JPG" alt="">
+        
+        <section class="slider">
+            <ul class="galeria">
+                <li>
+                    <img src="imagenes/boca.png" alt="boca">
+                </li>
+                <li>
+                    <img src="imagenes/river.png" alt="river">
+                </li>
+                <li>
+                    <img src="imagenes/video1-4enlinea.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/video2-4enlinea.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea3.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea4.JPG" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea5.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea6.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea7.jpg" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea8.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea9.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea10.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea11.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea12.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea13.jpg" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea14.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea15.jpg" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea16.png" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea17.jpg" alt="4enlinea">
+                </li>
+                <li>
+                    <img src="imagenes/4enlinea18.jpg" alt="4enlinea">
+                </li>
+            </ul>
         </section>
 
         <section class="instrucciones">
@@ -110,16 +180,16 @@
                 <div class="comentario">
                     <div class="contenido">
                         <div>
-                            <img src="imagenes/usuario.png" alt="logo usuario">                       
-                            <p class="comentario"><span>Usuario</span><br>Sirve para unas horas, después se vuelve repetitivo.</p>
+                            <img src="imagenes/elMagoOlaechea.jpg" alt="logo usuario">                       
+                            <p class="comentario"><span>Nico Olaechea</span><br>Es un juegazo, si elijo a boca gano siempre.</p>
                         </div>
                         <p class="hora">Hace 40 minutos</p>
                     </div>
                     
                     <div class="botonesComentarios">
-                        <img src="imagenes/like.png" alt="Like">
-                        <p>5</p>
-                        <img src="imagenes/dislike.png" alt="Dislike">
+                        <img src="imagenes/like.png" alt="Like" id="1" class="like noClickeado">
+                        <p>1495</p>
+                        <img src="imagenes/dislike.png" alt="Dislike" id="1" class="dislike noClickeado">
                         <p>RESPONDER</p>
                     </div>
                 </div>
@@ -127,16 +197,16 @@
                 <div class="comentario">
                     <div class="contenido">
                         <div>
-                            <img src="imagenes/usuario.png" alt="logo usuario">                       
-                            <p class="comentario"><span>Usuario</span><br>Sirve para unas horas, después se vuelve repetitivo.</p>
+                            <img src="imagenes/leoMessi.jpg" alt="logo usuario">                       
+                            <p class="comentario"><span>Leo Messi</span><br>Sirve para unas horas, después se vuelve repetitivo.</p>
                         </div>
-                        <p class="hora">Hace 40 minutos</p>
+                        <p class="hora">Hace 46 minutos</p>
                     </div>
                     
                     <div class="botonesComentarios">
-                        <img src="imagenes/like.png" alt="Like">
-                        <p>5</p>
-                        <img src="imagenes/dislike.png" alt="Dislike">
+                        <img src="imagenes/like.png" alt="Like" id="2" class="like noClickeado" >
+                        <p>2551</p>
+                        <img src="imagenes/dislike.png" alt="Dislike" id="2" class="dislike noClickeado">
                         <p>RESPONDER</p>
                     </div>
                 </div>
@@ -144,16 +214,16 @@
                 <div class="comentario">
                     <div class="contenido">
                         <div>
-                            <img src="imagenes/usuario.png" alt="logo usuario">                       
-                            <p class="comentario"><span>Usuario</span><br>Sirve para unas horas, después se vuelve repetitivo.</p>
+                            <img src="imagenes/kun.png" alt="logo usuario">                       
+                            <p class="comentario"><span>Kun Aguero</span><br>Juegazo pa!</p>
                         </div>
-                        <p class="hora">Hace 40 minutos</p>
+                        <p class="hora">Hace 54 minutos</p>
                     </div>
                     
                     <div class="botonesComentarios">
-                        <img src="imagenes/like.png" alt="Like">
-                        <p>5</p>
-                        <img src="imagenes/dislike.png" alt="Dislike">
+                        <img src="imagenes/like.png" alt="Like" id="3" class="like noClickeado">
+                        <p>1044</p>
+                        <img src="imagenes/dislike.png" alt="Dislike" id="3" class="dislike noClickeado">
                         <p>RESPONDER</p>
                     </div>
                 </div>
@@ -161,16 +231,16 @@
                 <div class="comentario">
                     <div class="contenido">
                         <div>
-                            <img src="imagenes/usuario.png" alt="logo usuario">                       
-                            <p class="comentario"><span>Usuario</span><br>Sirve para unas horas, después se vuelve repetitivo.</p>
+                            <img src="imagenes/marta.jpg" alt="logo usuario">                       
+                            <p class="comentario"><span>Marta</span><br>Muy entretenido, paso horas jugando este juego.</p>
                         </div>
-                        <p class="hora">Hace 40 minutos</p>
+                        <p class="hora">Hace 4 horas</p>
                     </div>
                     
                     <div class="botonesComentarios">
-                        <img src="imagenes/like.png" alt="Like">
+                        <img src="imagenes/like.png" alt="Like" id="4" class="like noClickeado">
                         <p>5</p>
-                        <img src="imagenes/dislike.png" alt="Dislike">
+                        <img src="imagenes/dislike.png" alt="Dislike" id="4" class="dislike noClickeado">
                         <p>RESPONDER</p>
                     </div>
                 </div>
@@ -178,16 +248,16 @@
                 <div class="comentario">
                     <div class="contenido">
                         <div>
-                            <img src="imagenes/usuario.png" alt="logo usuario">                       
-                            <p class="comentario"><span>Usuario</span><br>Sirve para unas horas, después se vuelve repetitivo.</p>
+                            <img src="imagenes/eduardo.jpg" alt="logo usuario">                       
+                            <p class="comentario"><span>Eduardo</span><br>No me gusto, aburridisimo.</p>
                         </div>
-                        <p class="hora">Hace 40 minutos</p>
+                        <p class="hora">Hace 2 dias</p>
                     </div>
                     
                     <div class="botonesComentarios">
-                        <img src="imagenes/like.png" alt="Like">
-                        <p>5</p>
-                        <img src="imagenes/dislike.png" alt="Dislike">
+                        <img src="imagenes/like.png" alt="Like" id="5" class="like noClickeado">
+                        <p>1</p>
+                        <img src="imagenes/dislike.png" alt="Dislike" id="5" class="dislike noClickeado">
                         <p>RESPONDER</p>
                     </div>
                 </div>
