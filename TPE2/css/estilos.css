@@ -13,7 +13,11 @@
  }
 
  p{
-     font-size: 10px;
+    font-size: 2.5vw;
+ }
+
+ h2{
+    font-size: 3.4vw;
  }
 
  header, header div.divImagenMenuHamburguesa, header div.mostrarMenuDesplegable, header div.divImagenCruz, 
@@ -120,7 +124,7 @@ body {
      opacity: 100%;
  }
 
- main h2 {
+ main .seccionJuegos h2, main .seccionRecomendados h2{
     width: 40%;
     background-color: #873FA0;
     color: #D8D6FF;
@@ -188,55 +192,91 @@ body {
 .seccionesCars{
     position: relative;
     width: 100%;
+    height: 350px;
     top: 5px;
     left: 0;
     margin-bottom: 50px;
 }
 
-.tituloSeccion {
-    position: absolute;
-    width: 100%;
-}
 
-.seccionesCars .tituloSeccion img {
+.seccionesCars .tituloSeccion{
+    background-image: url("../imagenes/juego-estreno/fondo-titulos-cars.png");
     position: relative;
-    width: 70%;
-    top: 0;
-    left: 17%;
-    margin: 0;
+    top: 14%;
+    left: 28%;
+    height: 15%;
+    width: 50%;
+    background-size:contain;
+    opacity: 0.5;
     z-index: 1;
 }
-.tituloSeccion h2 {
+.seccionesCars h2 {
     position: absolute;
-    top: 0%;
-    left: 32%;
+    top: 16%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
     z-index: 2;
 }
 
-.contenidoSeccion{
-    position: relative;
-    width: 100%;
-    height: 250px;
-    top: 0px;
-    left: 0;
+.seccionHistoria, .seccionDescripcion, .seccionDescripcion, .seccionModosJuego, 
+.seccionPersonajes, .seccionCircuitos, .seccionPlataformas{
+
 }
 
-.seccionesCars img {
-    position: absolute;
-    width: 100%;
-    top: 20px;
-    left: 0;
-    margin: 0px 0;
-    z-index: 1;
+.imgHistoria, .imgDescripcion, .imgDescripcion, .imgModosJuego, 
+.imgPersonajes, .imgCircuitos, .imgPlataformas{
+    position: relative;
+    height: 100%;
+    background-size:cover;
+    opacity: 0.7;
 }
+
 .seccionesCars p{
     position: absolute;
-    width: 49%;
-    top: 29%;
-    left: 50%;
-    margin: 0px 0;
-    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.199);
 }
+
+.seccionHistoria p{
+    width: 49%;
+    top: 33%;
+    left: 44%;
+    text-align: justify;
+    padding: 3%;
+}
+
+.seccionDescripcion p{
+    width: 80%;
+    top: 53%;
+    left: 9%;
+    text-align: center;
+    padding: 3%;
+}
+
+.imgHistoria{
+    background-image: url("../imagenes/juego-estreno/historia.png");
+}
+
+.imgDescripcion{
+    background-image: url("../imagenes/juego-estreno/descripcion.png"); 
+}
+
+.imgModosJuego{
+    background-image: url("../imagenes/juego-estreno/caracteristicas.png"); 
+}
+
+.imgPersonajes{
+    background-image: url("../imagenes/juego-estreno/personajes.png"); 
+}
+
+.imgCircuitos{
+    background-image: url("../imagenes/juego-estreno/circuitos.png"); 
+}
+
+.imgPlataformas{
+    background-image: url("../imagenes/juego-estrenoplataformas.png"); 
+}
+
 
 /****************************************************/
 
@@ -395,12 +435,21 @@ main section ul li button {
 
  @media only screen and (min-width: 600px){
     header {
-        max-height: 87px;
+        max-height: 60px;
     }
 
+    p{
+        font-size: 1.5vw;
+     }
+
+     h2{
+        font-size: 3.4vw;
+     }
+    
+
     header img.logoPagina {
-        width: 87px;
-        height: 83px;
+        margin: 5px 10px;
+        max-height: 60px;
     }
     
     header input {
@@ -414,10 +463,9 @@ main section ul li button {
         padding-left: 20px;
     }
 
-     header img.menuHamburguesa {
-         width: 53px;
-         height: 59px;
-         margin: auto 0;
+     header img.menuHamburguesa,  .cruz{
+        margin: 5px 10px;
+        max-height: 60px;
      }
 
      /*Oculto y muestro el menu desplegable*/
@@ -437,11 +485,6 @@ main section ul li button {
         margin: 40px
     }
 
-    .cruz {
-        width: 70px;
-        margin: auto 0;
-    }
-
     header div.listasRedesSocialesMenu img{
         width: 60px;
     }
@@ -449,6 +492,19 @@ main section ul li button {
     .oscurecerFondo {
         opacity: 60%;
     }
+
+    /******************JUEGO ESTRENO******************************/
+
+    .seccionesCars{
+
+        width: 100%;
+        height: 850px;
+        top: 5px;
+        left: 0;
+        margin-bottom: 50px;
+    }
+
+    /*************************************************************/
 
      main section.seccionBannerJuegoEstreno img{
         height: 418px;
