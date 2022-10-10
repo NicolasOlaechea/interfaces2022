@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", iniciarPagina);
 function iniciarPagina(){
     "use strict"
-
+    
     let menuHamburguesa = document.querySelector("#menuHamburguesa");
     menuHamburguesa.addEventListener("click", mostrarMenuDesplegable);
     let cruz = document.querySelector("#cruz");
