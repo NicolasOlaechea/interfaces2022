@@ -3,6 +3,7 @@ function iniciarPagina(){
     "use strict"
 
     let botonesLike = document.querySelectorAll(".like");
+    console.log(botonesLike);
     let botonesDislike = document.querySelectorAll(".dislike");
 
     botonesLike.forEach(element => {
