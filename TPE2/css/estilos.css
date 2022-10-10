@@ -81,30 +81,33 @@ button:hover {
      color: #FEF7F7;
  }
 
- p, ul li{
-    font-size: 2.7vw;
+ p, ul li, a{
+    font-size: 2.2vw;
+ }
+
+a{
+    font-size: 1.3vw;
  }
 
  h2{
-    font-size: 3.4vw;
- }
-
- h3{
-    font-size: 3.2vw;
- }
-
- h4{
     font-size: 2.9vw;
  }
 
+ h3{
+    font-size: 2.7vw;
+ }
+
+ h4{
+    font-size: 2.4vw;
+ }
+
  ul li h2{
-     font-size: 3.0vw;
+     font-size: 2.5vw;
  }
 
  header, header div.divImagenMenuHamburguesa, header div.mostrarMenuDesplegable, header div.divImagenCruz, 
  header div.listasRedesSocialesMenu ul, main section.seccionBannerJuegoEstreno .contenidoBanner, 
- main section ul, main section ul li, footer div.contenidoFooter, 
- footer div.listasRedesSociales, footer div.redesSociales ul{
+ main section ul, main section ul li, footer div.listasRedesSociales, footer div.redesSociales ul{
     display: flex;
  }
 
@@ -213,28 +216,17 @@ header div.mostrarMenuDesplegable { /*CON JS*/
     justify-content: center;
  }
 
- header div.listasRedesSocialesMenu img{
+ header div.listasRedesSocialesMenu img, footer .listasRedesSociales img{
     width: 7vw;
     margin: 5px 5px;
     opacity: 0.4;
     transition: 0.3s linear;
  }
 
- header div.listasRedesSocialesMenu img:hover{
+ header div.listasRedesSocialesMenu img:hover, footer .listasRedesSociales img:hover{
     transition: 0.3s linear;
     opacity: 1;
  }
-
- main h2 {
-    width: fit-content;
-    background-color: #873FA0;
-    text-align: center;
-    padding: 3px 20px;
-    margin: 14px auto 2px auto ;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    font-size: 16px;
-}
 
 /******************JUEGO ESTRENO***************/
 .seccionBannerPaginaJuegoEstreno {
@@ -258,22 +250,53 @@ header div.mostrarMenuDesplegable { /*CON JS*/
     z-index: 2;
 }
 
-.seccionBannerPaginaJuegoEstreno button{
-    top: 30%;
-    left: 35%;
-    padding: 10px;
-    background: rgb(202,3,3);
-    background: linear-gradient(0deg, rgba(202,3,3,1) 0%, rgba(239,32,32,1) 100%);
-    transition: 1s;
-    opacity: 0.4;
-    z-index: 3;
-    font-size: 1.9vw;
-}
+.animatedDivBtn{
+    width: 27%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
-.seccionBannerPaginaJuegoEstreno button:hover{
-    transition: 1s;
-    opacity: 1;
-}
+  .animatedDivBtn a{
+      text-transform:uppercase;
+    padding: 3% 0.5%;
+    display: block;
+    width: auto;
+    color: rgba(211, 211, 211, 0.712);
+    border: 2px solid rgba(211, 211, 211, 0.712);
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+
+  .animatedDivBtn a span{
+    position: relative;
+    z-index: 2;
+  }
+
+  .animatedDivBtn a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(212, 58, 58, 0.712);
+    transition: all .35s;
+  }
+
+  .animatedDivBtn a:hover{
+    color: #fff;
+  }
+  
+.animatedDivBtn a:hover:after{
+    width: 100%;
+  }
 
 .seccionBannerPaginaJuegoEstreno .car{
     top: 68%;
@@ -329,11 +352,6 @@ header div.mostrarMenuDesplegable { /*CON JS*/
     width: 100%;
     text-align: center;
     z-index: 2;
-}
-
-.seccionHistoria, .seccionDescripcion, .seccionModosJuego, .seccionModosJuego, 
-.seccionPersonajes, .seccionCircuitos, .seccionPlataformas{
-
 }
 
 .imgHistoria, .imgDescripcion, .imgDescripcion, .imgModosJuego, 
@@ -462,6 +480,17 @@ header div.mostrarMenuDesplegable { /*CON JS*/
 
 /****************************************************/
 
+main h2 {
+    width: fit-content;
+    background-color: #873FA0;
+    text-align: center;
+    padding: 3px 20px;
+    margin: 14px auto 2px auto ;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 16px;
+}
+
  main section.seccionBannerJuegoEstreno img{
     position: relative;
     top: 12px;
@@ -545,7 +574,7 @@ main section ul li {
     height: 160px;
     background-color: #B8B4FE;
     margin: 2px;
-    border-radius: 20px;
+    border-radius: 10px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -560,6 +589,7 @@ main section ul li img, h3, button:hover {
 main section ul li img {
     width: 110px;
     height: 60%;
+    border-radius: 5px;
 }
 
 main section ul li h3 {
@@ -572,18 +602,23 @@ main section ul li h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: rgba(17, 17, 17, 0.315);
+    padding: 2px 5px;
+    border-radius: 5px;
 }
 
 .divContenidoBtnComprar p{
     font-size: 15px;
+    font-weight: bold;
     color: #FEF7F7;
     margin: 0 2px;
     padding-bottom: 3px;
 }
 
 .divContenidoBtnComprar span{
+    font-weight: bold;
     font-size: 22px;
-    color: #E5E84D;
+    color: #d8db23;
     padding-bottom: 3px;
 }
 
@@ -591,16 +626,44 @@ main section ul li button, main section ul li button.btnComprar {
     width: 50px;
     height: 23px;
     font-size: 15px;
-    background-color: #78d694cc;
+    background-color: #4fc572cc;
     text-align: center;
+    font-weight: bold;
     margin: 0 2px 5px 2px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 15px 10px -15px #111; 
+    transition-duration: 0.4s;
+    
 }
+
+main section ul li button:hover{
+    transition-duration: 0.3s;
+    background-color: #40d86dcc;
+}
+
+main section ul li button:after {
+    position: relative;
+    top: 59px;
+    content: "";
+    background: #30bd5a;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+  
+  main section ul li button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
 
 main section ul li button.btnComprar {
     background-color: #FEF7F7;
     color: #272727;
+    font-weight: bold;
     width: fit-content;
     padding: 0px 3px 1px 3px;
     margin-top: 3px;
@@ -608,12 +671,79 @@ main section ul li button.btnComprar {
 
 }
 
+.comprarBtnDiv button{
+    transition-duration: 0.4s;
+}
+
+.comprarBtnDiv button:hover{
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+}
+
+.comprarBtnDiv button:after {
+    position: relative;
+    top: 14px;
+    content: "";
+    background: #ffffff;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+
+  .comprarBtnDiv button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+
+  .bannerBtnDiv button{
+    transition-duration: 0.4s;
+    font-size: 13px;
+}
+
+.bannerBtnDiv button a{
+    font-size: 13px;
+}
+
+.bannerBtnDiv button:hover{
+    transition-duration: 0.3s;
+    background-color: #8d8bdb;
+}
+
+.bannerBtnDiv button:after {
+    position: relative;
+    top: 24px;
+    content: "";
+    background: #6E6BBE;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+
+  .bannerBtnDiv button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
  /*************************************FOOTER*************************************************************/
 
  footer {
     background-color: #272727;
-    margin: 10px 0 0 0;
+    margin: 10px auto;
  }
+
+.footerNav ul{
+    margin: 13px;
+ }
+ 
 
  footer img.logoPagina {
     width: 9vw;
@@ -621,10 +751,9 @@ main section ul li button.btnComprar {
  }
 
  footer div.contenidoFooter {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items:flex-start;
-    margin: 15px 35px;
+    display: block;
+    width: 100%;
+    margin: 15px auto;
  }
 
  footer h3 {
@@ -639,12 +768,12 @@ main section ul li button.btnComprar {
 
  footer .footerNav{
     display: inline;
-    width: 100%;
+
  }
 
  footer .footerNav .enlacesFooter li{
     padding: 10px;
-    width: 100%;  
+ 
 }
 
  footer button{
@@ -671,19 +800,19 @@ main section ul li button.btnComprar {
     color: #B8B4FE;
  }
 
- footer div.listasEnlaces ul a li:hover{
+ footer li:hover{
     color: #6E6BBE;
  }
 
  footer div.redesSociales ul li img{
-    width: 6vw;
+    width: 4vw;
  }
 
  footer div.copiright {
      background-color: #AEADBF;
  }
 
- footer div.copiright h3 {
+ footer div.copiright p {
      display: block;
      color: #272727;
      font-size: 12px;
@@ -697,15 +826,15 @@ main section ul li button.btnComprar {
     }
 
     p, ul li{
-        font-size: 1.5vw;
+        font-size: 1.0vw;
      }
 
      h2{
-        font-size: 3.0vw;
+        font-size: 2.7vw;
      }
     
      h3{
-        font-size: 3.0vw;
+        font-size: 2.5vw;
      }
 
      h4{
@@ -713,7 +842,7 @@ main section ul li button.btnComprar {
      }
     
      ul li h2{
-         font-size: 2.0vw;
+         font-size: 1.6vw;
      }
 
     header img.logoPagina {
@@ -768,13 +897,6 @@ main section ul li button.btnComprar {
         position: relative;
         top: 0;
         left: 0;
-    }
-
-    .seccionBannerPaginaJuegoEstreno button{
-        top: 39%;
-        left: 42%;
-        padding: 20px;
-        font-size: 1.7vw;
     }
     
     .seccionesCars .textoTitulo{
@@ -879,7 +1001,7 @@ main section ul li button.btnComprar {
 
      main section ul li {
         width: fit-content;
-        height: 225px;
+        height: 255px;
         margin: 0 5px;
         padding: 2px 10px;
 
@@ -890,6 +1012,10 @@ main section ul li button.btnComprar {
         height: 145px;
     }
 
+    .slider h3:hover{
+        color: whitesmoke;
+    }
+    
     main section ul li h3 {
         font-size: 16px;
     }
@@ -962,15 +1088,15 @@ main section ul li button.btnComprar {
     
      footer div.redesSociales ul{
         display: block;
-        margin: 5px 5px;
+        margin: 1% 1%;
      }
     
      footer div.redesSociales ul li{
-        margin: 10px 5px;
+        margin: 1% 1%;
      }
     
      footer div.redesSociales ul li img{
-        width: 5vw;
+        width: 3vw;
      }
     
      footer div.copiright {
