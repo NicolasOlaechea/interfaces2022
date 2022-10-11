@@ -501,14 +501,14 @@ main h2 {
 
 main section.seccionBannerJuegoEstreno .contenidoBanner{
     position: absolute;
-    top: 80px;
-    left: 50px;
+    top: 8%;
+    left: 40%;
     flex-direction: column;
     justify-content: flex-start;
 }
 
 main .contenidoBanner h2 {
-    font-size: 25px;
+    font-size: 50px;
     font-weight: bold;
     background-color: transparent;
     text-align: start;
@@ -753,15 +753,17 @@ main section ul li button.btnComprar {
  }
 
  footer div.contenidoFooter {
-    display: block;
+    display: flex;
     width: 100%;
     margin: 15px auto;
+    justify-content: center;
  }
 
  footer h3 {
-    margin: 10px 0 13px 0;
-    text-align: left;
+    text-align: center;
+    margin: 5px 0 px 0;
     text-transform: uppercase;
+    color: #272727;
  }
 
  footer a{
@@ -769,13 +771,14 @@ main section ul li button.btnComprar {
  }
 
  footer .footerNav{
-    display: inline;
+    width: 100%;
+    display: flex;
+    padding-right: 180px;
 
  }
 
  footer .footerNav .enlacesFooter li{
     padding: 10px;
- 
 }
 
  footer button{
@@ -812,6 +815,7 @@ main section ul li button.btnComprar {
 
  footer div.copiright {
      background-color: #AEADBF;
+     padding: 5px;
  }
 
  footer div.copiright p {
@@ -976,11 +980,12 @@ main section ul li button.btnComprar {
         left: 10%;
     }
     
-    main .contenidoBanner h2 {
-        font-size: 40px;
+    main section.seccionBannerJuegoEstreno .contenidoBanner h2 {
+        font-size: 20px;
         margin: 0 0 3px 0;
         text-align: start;
         padding: 0;
+        z-index: 10;
     }
     
     main .contenidoBanner p {
@@ -1110,6 +1115,11 @@ main section ul li button.btnComprar {
      footer div.copiright h3 {
         font-size: 16px;
         padding: 4px 0;
+     }
+
+     footer h4 {
+         font-size: 20px;
+         text-align: center;
      }
   
  }
