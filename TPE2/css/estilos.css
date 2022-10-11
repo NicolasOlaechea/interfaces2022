@@ -740,7 +740,7 @@ main section ul li button.btnComprar {
  }
 
  footer div.contenidoFooter {
-    display: flex;
+    display: block;
     width: 100%;
     margin: 15px auto;
     justify-content: center;
@@ -760,7 +760,7 @@ main section ul li button.btnComprar {
  footer .footerNav{
     width: 100%;
     display: flex;
-    padding-right: 180px;
+    margin:0;
 
  }
 
@@ -820,7 +820,7 @@ main section ul li button.btnComprar {
     }
 
     p, ul li{
-        font-size: 1.0vw;
+        font-size: 1.5vw;
      }
 
      h2{
@@ -1516,7 +1516,7 @@ main section.seccionPersonajesCarrusel ul {
     justify-content: space-between;
     padding: 0px;
     overflow: hidden;
-    margin: 0 25px;
+    margin: 0 5px;
     scroll-behavior: [auto smooth];
 }
 
