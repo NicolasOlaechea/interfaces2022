@@ -948,6 +948,12 @@ main section ul li button.btnComprar {
         top: 27%;
     }
 
+    .carruselCars .tituloSeccion{
+        top: -17px;
+        margin: auto;
+        left: 55%;
+    }
+
     /*************************************************************/
 
     main section.seccionBannerJuegoEstreno{
@@ -1539,16 +1545,17 @@ main section.seccionPersonajesCarrusel ul li img{
 }
 
 .carruselCars{
-    height: 550px;
+    height: 400px;
 }
 
 .carruselCars .textoTitulo{
-    top: 0;
+    top: -30px;
 }
 
 .carruselCars .tituloSeccion{
-    top: 0;
-    left: 36%;
+    top: -17px;
+    margin: auto;
+    left: 16%;
 }
 
 .seccionPersonajes ul li h2{
