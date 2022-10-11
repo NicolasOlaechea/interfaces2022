@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="js/menuDesplegable.js"></script>
+    <script src="js/footerDesplegable.js"></script>
+    <script src="js/carruselPersonajes.js"></script>
+    <title>Inicio</title>
+</head>
+<body class="juegoEstreno">
+    <header>
+        <a href="index.html"><img class="logoPagina" src="imagenes/logoPagina.png" alt="Logo pagina"></a>
+        <img class="menuHamburguesa" id="menuHamburguesa" src="imagenes/menuHamburguesa.png" alt="Menu hamburguesa">
+        
+        <div class="menuDesplegable" id="menuDesplegable">
+            <div class="divImagenCruz">
+                <img class="cruz" id="cruz" src="imagenes/cruz.png" alt="Cruz">    
+            </div>            
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="#"><li>Mi perfil</li></a>
+                <a href="#"><li>Favoritos</li></a>
+                <a href="juego-estreno.html"><li>Estrenos</li></a>
+                <a href="#"><li>Categorias</li></a>
+                <a href="#"><li>Comunidad</li></a>
+            </ul>
+            
+            <div class="listasRedesSocialesMenu">
+                <ul>
+                    <li><img src="imagenes/fb.png" alt="Facebook"></li>
+                    <li><img src="imagenes/tw.png" alt="Twitter"></li>
+                    <li><img src="imagenes/ig.png" alt="Instagram"></li>
+                    <li><img src="imagenes/yt.png" alt="Youtube"></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="fondoOscuro" class="fondoOscuroHide"></div>
+
+    <main>
+        
+        <section class="seccionBannerPaginaJuegoEstreno">
+            <img class="bannerEstreno1" src="imagenes/juego-estreno/banner1.png" alt="Banner juego estreno fondo sin cielo">
+            <img class="bannerEstreno2" src="imagenes/juego-estreno/banner2.png" alt="Banner juego estreno cielo">
+            
+            <div class="contenidoBannerJuegoEstreno">
+                <div class="animatedDivBtn">
+                    <a href="#"><span>Agendá la fecha de estreno</span></a>
+                </div>
+                <img class="car" src="imagenes/juego-estreno/car.png" alt="Rayo MCQUEEN">
+                <img class="polvo" src="imagenes/juego-estreno/polvo.png" alt="Nube de polvo">
+            </div>    
+        </section>
+        <section class="seccionHistoria seccionesCars">
+            <div class="tituloSeccion"></div>
+            <h2 class="textoTitulo">Hisotria del Juego</h2>
+            <div class="imgHistoria"></div>
+            <p>
+                Inspirado en la película de animación de Disney•Pixar, Cars 2: El videojuego permite a los jugadores sumergirse
+                 en el universo de Cars 2 y encontrarse con algunos de sus personajes favoritos en lugares exóticos de todo el mundo.<br>
+                 <br>Lleva a cabo peligrosas misiones, compite para convertirte en el coche de carreras más rápido del mundo
+                 o utiliza tus habilidades de espía en emocionantes y divertidas carreras y arenas de combate.
+            </p>
+        </section>
+
+        <section class="seccionDescripcion seccionesCars">
+            <div class="tituloSeccion"></div>
+            <h2 class="textoTitulo">Descripción</h2>
+            <div class="imgDescripcion">
+            </div>
+            <p>
+                Elije a tu personaje favorito para desbloquear nuevos circuitos y avanzar en el modo historia.
+                Supera a tus rivales para logar el objetivo mas importante: ¡Ganar la copa Piston!
+            </p>
+        </section>
+
+        <section class="seccionModosJuego seccionesCars">
+            <div class="imgModosJuego"></div>
+            
+            <ul>
+                <li><h2>Modos de Juego</h2></li>
+                <li>Historia</li>
+                <li> Carrera rápida</li>
+                <li>Multijugador</li>
+                <li>Un jugador</li>
+            </ul>
+        </section>
+        
+        <section class="seccionPersonajes seccionesCars">
+            <div class="imgPersonajes">
+            </div>
+            <ul>
+                <li><h2>Personajes</h2></li>
+                <li>Contiene 8 personajes</li>
+                <li>Nuevas habilidades</li>
+                <li>Personajes personalizables</li>
+            </ul>
+           
+        </section>
+
+        <section class="seccionCircuitos seccionesCars">
+            <div class="imgCircuitos">
+            </div>
+            <ul>
+                <li><h3>Circuitos</h3></li>
+                <li>Fireball Beach</li>
+                <li>Thunder Hollow</li>
+                <li>Thomasville</li>
+                <li>Radiador Springs</li>
+                <li>Florida</li>
+            </ul>
+        </section>
+
+
+        <section class="seccionPlataformas seccionesCars">
+            <div class="imgPlataformas"></div>
+            
+            <ul>
+                <li><h3>Plataformas</h3></li>
+                <li>Xbox 360</li>
+                <li>Xbox One</li>
+                <li>PS4</li>
+                <li>PS5</li>
+            </ul>
+        </section>
+        
+        <section class="seccionesCars carruselCars">
+        <div class="tituloSeccion">
+
+        </div>
+        <h2 class="textoTitulo">Personajes</h2>
+        <section class="seccionPersonajesCarrusel">
+            <img class="flecha flechaIzquierda" id="2" src="imagenes/flecha-izquierda.png" alt="flecha izquierda">
+            <ul class="slider" id="2">
+                <li class="itemPersonaje" ><img src="imagenes/personajesCars/auto1.png" id="1" class="imgPersonaje" alt="rayo mcqueen"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonajes" alt="fondo"><h3 class="ocultar">Rayo McQueen</h3><p class="ocultar">
+                    Velocidad: 121km<br>
+                    Aceleracion: 100<br>
+                    Resistencia: 90<br>
+                    Maniobralidad: 89
+                </p></li>
+                <li class="itemPersonaje" id="2"><img src="imagenes/personajesCars/auto2.png" id="2"class="imgPersonaje" alt="mate"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo"><h3 class="ocultar">Mate</h3><p class="ocultar">
+                    Velocidad: 77km<br>
+                    Aceleracion: 45<br>
+                    Resistencia: 41<br>
+                    Maniobralidad: 67
+                </p></li></li>
+                <li class="itemPersonaje" id="3"><img src="imagenes/personajesCars/auto3.png" id="3" class="imgPersonaje" alt="jackson storm"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo"><h3 class="ocultar">Jackson Storm</h3><p class="ocultar">
+                    Velocidad: 116km<br>
+                    Aceleracion: 98<br>
+                    Resistencia: 89<br>
+                    Maniobralidad: 86
+                </p></li></li>
+                <li class="itemPersonaje" id="4"><img src="imagenes/personajesCars/auto4.png" id="4" class="imgPersonaje" alt="chick hicks"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo"><h3 class="ocultar">Chick Hicks</h3><p class="ocultar">
+                    Velocidad: 110km<br>
+                    Aceleracion: 95<br>
+                    Resistencia: 86<br>
+                    Maniobralidad: 82
+                </p></li></li>
+                <li class="itemPersonaje" id="5"><img src="imagenes/personajesCars/auto5.png" id="5" class="imgPersonaje" alt="sally"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo"><h3 class="ocultar">Sally</h3><p class="ocultar">
+                    Velocidad: 75km<br>
+                    Aceleracion: 68<br>
+                    Resistencia: 64<br>
+                    Maniobralidad: 74
+                </p></li></li>
+                <li class="itemPersonaje"id="6"><img src="imagenes/personajesCars/auto6.png" id="6" class="imgPersonaje" alt="Doc hudson"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo"><h3 class="ocultar">Doc Hudson</h3><p class="ocultar">
+                    Velocidad: 73km<br>
+                    Aceleracion: 75<br>
+                    Resistencia: 52<br>
+                    Maniobralidad: 66
+                </p></li></li>
+                <li class="itemPersonaje" id="7"><img src="imagenes/personajesCars/auto7.png" id="7" class="imgPersonaje" alt="Strep weathers"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo">
+                    <h3 class="ocultar">Strep weathers</h3><p class="ocultar">
+                        Velocidad: 73km<br>
+                        Aceleracion: 67<br>
+                        Resistencia: 54<br>
+                        Maniobralidad: 63
+                    </p></li></li>
+                <li class="itemPersonaje"><img src="imagenes/personajesCars/auto8.png" id="8" class="imgPersonaje" alt="ramon"><img src="imagenes/personajesCars/fondoPersonajes.jpg" class="ocultar fondoPersonaje" alt="fondo"><h3 class="ocultar">Ramon</h3><p class="ocultar">
+                    Velocidad: 88km<br>
+                    Aceleracion: 78<br>
+                    Resistencia: 64<br>
+                    Maniobralidad: 62
+                </p></li></li>
+            </ul>
+            <img class="flecha flechaDerecha" id="2" src="imagenes/flecha-derecha.png" alt="flecha derecha">
+        </section>
+    </section>
+    </main>
+    
+    <footer>
+        <div class="contenidoFooter">
+          <div class="enlaces">
+            <nav class="footerNav">
+              <ul>
+                <li>
+                  <a href="index.html"
+                    ><img
+                      class="logoPagina"
+                      src="imagenes/logoPagina.png"
+                      alt="Logo pagina"
+                  /></a>
+                </li>
+                <li>
+                  <button id="navegacionBtn">
+                    <h4> Navegacion</h4>
+                    <img
+                      id="flechaNavegacion"
+                      class="flechaDropdownFooter"
+                      src="./imagenes/flecha-dropdown-footer.png"
+                      alt="flecha-dropdown"
+                    />
+                  </button>
+  
+                  <ul
+                    id="enlacesNavegacion"
+                    class="enlacesFooter enlacesOcultos enlacesNavegacion"
+                  >
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="#"><li>Mi perfil</li></a>
+                    <a href="#"><li>Categorias</li></a>
+                    <a href="#"><li>Favoritos</li></a>
+                  </ul>
+                </li>
+                <li>
+                  <button id="nosotrosBtn">
+                    <h4>  Nosotros</h4>
+                    <img
+                      id="flechaNosotros"
+                      class="flechaDropdownFooter"
+                      src="./imagenes/flecha-dropdown-footer.png"
+                      alt="flecha-dropdown"
+                    />
+                  </button>
+  
+                  <ul
+                    id="enlacesNosotros"
+                    class="enlacesFooter enlacesOcultos enlacesNosotros"
+                  >
+                    <a href="juego-estreno.html"><li>Estrenos</li></a>
+                    <a href="#"><li>Comunidad</li></a>
+                    <a href="#"><li>Publicidad</li></a>
+                    <a href="#"><li>Contacto</li></a>
+                  </ul>
+                </li>
+  
+                <li>
+                  <button id="ayudaBtn">
+                    <h4> Ayuda</h4>
+                    <img
+                      id="flechaAyuda"
+                      class="flechaDropdownFooter"
+                      src="./imagenes/flecha-dropdown-footer.png"
+                      alt="flecha-dropdown"
+                    />
+                  </button>
+                  <ul
+                    id="enlacesAyuda"
+                    class="enlacesFooter enlacesOcultos enlacesAyuda"
+                  >
+                    <a href="#"><li>Acerca de</li></a>
+                    <a href="#"><li>Politicas de privacidad</li></a>
+                    <a href="#"><li>Terminos de uso</li></a>
+                  </ul>
+                </li>
+  
+                <li>
+                  <button id="redesBtn">
+                    <h4> Redes</h4>
+                    <img
+                      id="flechaRedes"
+                      class="flechaDropdownFooter"
+                      src="./imagenes/flecha-dropdown-footer.png"
+                      alt="flecha-dropdown"
+                    />
+                  </button>
+  
+                  <div
+                    id="enlacesRedes"
+                    class="enlacesFooter enlacesOcultos redesSociales enlacesRedes"
+                  >
+                    <div class="listasEnlaces listasRedesSociales">
+                      <ul>
+                        <li>
+                          <img src="imagenes/fb.png" alt="Facebook" href="#" />
+                        </li>
+                        <li><img src="imagenes/tw.png" alt="Twitter" /></li>
+                      </ul>
+                      <ul>
+                        <li><img src="imagenes/ig.png" alt="Instagram" /></li>
+                        <li><img src="imagenes/yt.png" alt="Youtube" /></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="copiright">
+          <h3>Copyright 2022 © - Todos los derechos reservados</h3>
+        </div>
+      </footer>
+</body>
+</html>
