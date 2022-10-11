@@ -761,7 +761,6 @@ main section ul li button.btnComprar {
     width: 100%;
     display: flex;
     margin:0;
-
  }
 
  footer .footerNav .enlacesFooter li{
@@ -1498,14 +1497,14 @@ main section.seccionPersonajesCarrusel .flecha {
 
 main section.seccionPersonajesCarrusel .flechaIzquierda {
     left: 40px;
-    top: 50%;
+    top: 170px;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
 
 main section.seccionPersonajesCarrusel .flechaDerecha {
     right: 40px;
-    top: 50%;
+    top: 170px;
     transform: translate(50%, -50%);
     
 }
