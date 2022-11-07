@@ -1,0 +1,1701 @@
+* { 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /*Cambiar*/
+}
+
+#canvas {
+    background-color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.contenedorLoader {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    top:0;
+    position: fixed;
+    z-index: 10000;
+}
+
+.ocultarContenedorLoader {
+    display: none;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: solid 10px #FEF7F7;
+    border-bottom: solid transparent 10px;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+    margin: 15px;
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.barra {
+    width: 26%;
+    height: 1%;
+    background-color: rgb(172, 172, 172);
+    border-radius: 50px;
+}
+
+.progreso {
+    width: 0%;
+    height: 100%;
+    background-color: #FEF7F7;
+    border-radius: 50px;
+    animation: aumentar 5s linear infinite;
+}
+
+@keyframes aumentar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+ li, h1, h2, h3, h4, h5, h6, p, button{
+     color: #FEF7F7;
+ }
+
+ p, ul li, a{
+    font-size: 2.2vw;
+ }
+
+a{
+    font-size: 1.3vw;
+ }
+
+ h2{
+    font-size: 2.9vw;
+ }
+
+ h3{
+    font-size: 2.7vw;
+ }
+
+ h4{
+    font-size: 2.4vw;
+ }
+
+ ul li h2{
+     font-size: 2.5vw;
+ }
+
+ header, header div.divImagenMenuHamburguesa, header div.mostrarMenuDesplegable, header div.divImagenCruz, 
+ header div.listasRedesSocialesMenu ul, main section.seccionBannerJuegoEstreno .contenidoBanner, 
+ main section ul, main section ul li, footer div.listasRedesSociales, footer div.redesSociales ul{
+    display: flex;
+ }
+
+ header,  main, main section.seccionBannerJuegoEstreno, main section.seccionBannerJuegoEstreno img, 
+ main .contenidoBanner h2, main section.seccionRecomendados, main section.seccionJuegos,footer{
+    width: 100%;
+ }
+
+/*Oculto y muestro el menu desplegable con "header div.menuDesplegable"*/
+header input,  header div.menuDesplegable, .ocultarLogoMenuHamburguesa/*CON JS*/, main .contenidoBanner p, footer .enlacesOcultos{
+    display: none;
+}
+
+body {
+    background: #4A0065;
+    background: linear-gradient(0deg, #1F0328 0%,#4A0065 100%);
+    transition: 1s;
+ }
+
+ .juegoEstreno{
+    background: #4A0065;
+    background: linear-gradient(0deg, #320000 0%,#5C0000 100%);
+    transition: 1s;
+ }
+
+/*************************************HEADER*************************************************************/
+
+ header {
+     max-height: 45px;
+     background-color: #6E6BBE;
+     justify-content: space-between;
+     top:0;
+     position: fixed;
+     z-index: 10;
+ }
+
+ header img.logoPagina {
+    width: 40px;
+    height: 40px;
+    margin: 3px 10px;
+}
+
+.logoPagina, img.menuHamburguesa, .cruz:hover {
+    cursor: pointer;
+}
+
+header img.menuHamburguesa{
+    width: 40px;
+    height: 40px;
+    margin: 3px 10px;
+}
+
+  header div.divImagenMenuHamburguesa {
+      justify-content: flex-end;
+  }
+
+ .fondoOscuroHide{
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+ .fondoOscuro{ 
+    transition: opacity 1s linear;
+    opacity: 0.5;
+    position: fixed;
+    border: #1F0328;
+    background-color: rgb(0, 0, 0) ;
+    width: 100%;
+    height: 1000px;
+    z-index: 5;
+}
+
+header div.mostrarMenuDesplegable { /*CON JS*/
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+    width: 50%;
+    background-color: #6E6BBE;
+    z-index: 6;
+ }
+
+ header div.mostrarMenuDesplegable ul{
+    text-align: center;
+    padding: 5%;
+ }
+
+ header div.mostrarMenuDesplegable ul li{
+    margin: 15% 0 5% 0;
+ }
+
+ header div.mostrarMenuDesplegable ul a li:hover{
+    color: #B8B4FE;
+ }
+
+ header div.divImagenCruz {
+     justify-content: flex-end;
+     align-items: flex-end;
+ }
+
+ .cruz {
+    width: 40px;
+     margin: 5px 7px 0 0;
+ }
+
+ header div.listasRedesSocialesMenu ul{
+    justify-content: center;
+ }
+
+ header div.listasRedesSocialesMenu img, footer .listasRedesSociales img{
+    width: 7vw;
+    margin: 5px 5px;
+    opacity: 0.4;
+    transition: 0.3s linear;
+ }
+
+ header div.listasRedesSocialesMenu img:hover, footer .listasRedesSociales img:hover{
+    transition: 0.3s linear;
+    opacity: 1;
+ }
+
+/******************JUEGO ESTRENO***************/
+.seccionBannerPaginaJuegoEstreno {
+    position: relative;
+    top: 35px;
+    left: 0;
+    margin: 10px 0 50px 0;
+}
+
+.bannerEstreno1, .bannerEstreno2 {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.bannerEstreno2,  .seccionBannerPaginaJuegoEstreno button, 
+.seccionBannerPaginaJuegoEstreno .car, .seccionBannerPaginaJuegoEstreno .polvo{
+    position: absolute;
+    z-index: 2;
+}
+
+.animatedDivBtn{
+    width: 27%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .animatedDivBtn a{
+      text-transform:uppercase;
+    padding: 3% 0.5%;
+    display: block;
+    width: auto;
+    color: rgba(211, 211, 211, 0.712);
+    border: 2px solid rgba(211, 211, 211, 0.712);
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+
+  .animatedDivBtn a span{
+    position: relative;
+    z-index: 2;
+  }
+
+  .animatedDivBtn a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(212, 58, 58, 0.712);
+    transition: all .35s;
+  }
+
+  .animatedDivBtn a:hover{
+    color: #fff;
+  }
+  
+.animatedDivBtn a:hover:after{
+    width: 100%;
+  }
+
+.seccionBannerPaginaJuegoEstreno .car{
+    top: 68%;
+    left: 40%;
+    width: 25%;
+    z-index: 4;
+}
+
+.seccionBannerPaginaJuegoEstreno .polvo{
+    z-index: 3;
+    left: 10%;
+    top: 19%;
+    width: 80%;
+}
+
+.seccionesCars{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    top: 5px;
+    left: 0;
+}
+
+.seccionesCars ul{
+    background: none;
+    display: block;
+}
+
+.seccionesCars li{
+    background: none;
+    height: 23%;
+    margin: 0 0 10% 0;
+    width: 100%;
+}
+
+.seccionesCars h3{
+    color: white;
+}
+
+.seccionesCars .tituloSeccion{
+    background-image: url("../imagenes/juego-estreno/fondo-titulos-cars.png");
+    background-repeat: no-repeat;
+    position: relative;
+    top: 14%;
+    left: 29%;
+    height: 13%;
+    width: 50%;
+    background-size:contain;
+    opacity: 0.5;
+    z-index: 1;
+}
+.seccionesCars .textoTitulo{
+    background: none;
+    position: absolute;
+    top: 12%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.imgHistoria, .imgDescripcion, .imgDescripcion, .imgModosJuego, 
+.imgPersonajes, .imgCircuitos, .imgPlataformas{
+    position: relative;
+    height: 100%;
+    background-size:cover;
+    opacity: 0.6;
+}
+
+.seccionesCars p, .seccionesCars ul{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.199);
+}
+
+.seccionHistoria p{
+    width: 49%;
+    top: 33%;
+    left: 44%;
+    text-align: justify;
+    padding: 3%;
+}
+
+.seccionHistoria{
+    height: 350px;
+}
+
+.seccionDescripcion p{
+    width: 80%;
+    top: 63%;
+    left: 9%;
+    text-align: center;
+    padding: 3%;
+}
+
+.seccionDescripcion .textoTitulo{
+    top: 22%;
+}
+
+.seccionDescripcion{
+    height: 250px;
+
+}
+.seccionDescripcion .tituloSeccion{
+    height: 50px;
+    top: 25%;
+}
+
+.seccionModosJuego{
+    height: 300px;
+}
+
+.seccionModosJuego ul{
+    top: 25%;
+    width: 30%;
+}
+.seccionModosJuego h2{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background: none;
+}
+
+.seccionPersonajes{
+    height: 270px;
+}
+
+.seccionPersonajes ul{
+    top: 25%;
+    width: 30%;
+    margin: 0 34%;
+}
+
+.seccionCircuitos{
+    height: 310px;
+}
+
+.seccionCircuitos ul{
+    top: 18%;
+    left: 53%;
+    width: 38%;
+}
+
+.seccionCircuitos li{
+    margin-bottom: 5%;
+}
+
+.seccionPlataformas{
+    height: 300px;
+}
+
+.seccionPlataformas ul{
+    top: 18%;
+    left: 4%;
+    width: 38%;
+}
+
+.seccionPlataformas li{
+    margin-bottom: 4%;
+}
+
+.imgHistoria{
+    background-image: url("../imagenes/juego-estreno/historia.png");
+}
+
+.imgDescripcion{
+    background-image: url("../imagenes/juego-estreno/descripcion.png"); 
+}
+
+.imgModosJuego{
+    background-image: url("../imagenes/juego-estreno/caracteristicas.png"); 
+}
+
+.imgPersonajes{
+    background-image: url("../imagenes/juego-estreno/personajes.png"); 
+}
+
+.imgCircuitos{
+    background-image: url("../imagenes/juego-estreno/circuitos.png"); 
+}
+
+.imgPlataformas{
+    background-image: url("../imagenes/juego-estreno/plataformas.png"); 
+}
+
+
+/****************************************************/
+
+main h2 {
+    width: fit-content;
+    background-color: #873FA0;
+    text-align: center;
+    padding: 3px 20px;
+    margin: 14px auto 2px auto ;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 16px;
+}
+
+ main section.seccionBannerJuegoEstreno img{
+    position: relative;
+    top: 12px;
+    height: 160px;
+    margin: 27px 0 0 0;
+    opacity: 60%;
+}
+
+main section.seccionBannerJuegoEstreno .contenidoBanner{
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main .contenidoBanner h2 {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: start;
+    margin: 0 0 1px 0;
+}
+
+main .contenidoBanner h2 a{
+    font-size: 2.5vw;
+}
+
+main .contenidoBanner p {
+    font-size: 12px;
+    margin: 2px 0 4px 0;
+}
+
+main .contenidoBanner a {
+    color: #FEF7F7;
+}
+
+main .contenidoBanner button {
+    width: 100px;
+    height: 20px;
+    font-size: 16px;
+    background-color: #6E6BBE;
+    border-radius: 30px;
+    margin: 4px auto 0 auto;
+    padding-bottom: 23px;
+}
+
+main section.seccionRecomendados, main section.seccionJuegos {
+    margin: 0px auto 20px 0;
+    position: relative;
+}
+
+main section .flecha {
+    width: 20px;
+    padding: 15px;
+    background-color: #FEF7F7;
+    border-radius: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+main section .flechaIzquierda {
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+main section .flechaDerecha {
+    right: 40px;
+    top: 50%;
+    transform: translate(50%, -50%);
+    
+}
+
+main section ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    overflow: hidden;
+    margin: 0 32px;
+    scroll-behavior: [auto smooth];
+}
+
+main section ul li {
+    width: fit-content;
+    height: 160px;
+    background-color: #B8B4FE;
+    margin: 2px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 2px 10px;
+}
+
+main section ul li img, h3, button:hover {
+    cursor: pointer;
+}
+
+main section ul li img {
+    width: 110px;
+    height: 60%;
+    border-radius: 5px;
+}
+
+main section ul li h3 {
+    font-size: 12px;
+    margin: 0 auto;
+    color: #4A0065;
+}
+
+.divContenidoBtnComprar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(17, 17, 17, 0.315);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.divContenidoBtnComprar p{
+    font-size: 15px;
+    font-weight: bold;
+    color: #FEF7F7;
+    margin: 0 2px;
+    padding-bottom: 3px;
+}
+
+.divContenidoBtnComprar span{
+    font-weight: bold;
+    font-size: 22px;
+    color: #d8db23;
+    padding-bottom: 3px;
+}
+
+main section ul li button, main section ul li button.btnComprar, .divJugarBtn button {
+    width: 50px;
+    height: 23px;
+    font-size: 15px;
+    background-color: #4fc572cc;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 2px 5px 2px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 10px -15px #111; 
+    transition-duration: 0.4s;
+    
+}
+
+main section ul li button:hover, .divJugarBtn button:hover {
+    transition-duration: 0.3s;
+    background-color: #40d86dcc;
+}
+
+main section ul li button:after, .divJugarBtn button:after {
+    position: relative;
+    top: 59px;
+    content: "";
+    background: #30bd5a;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+  
+  main section ul li button:active:after, .divJugarBtn button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+main section ul li button.btnComprar {
+    background-color: #FEF7F7;
+    color: #272727;
+    font-weight: bold;
+    width: fit-content;
+    padding: 0px 3px 1px 3px;
+    margin-top: 3px;
+    font-size: 14px;
+
+}
+
+.comprarBtnDiv button{
+    transition-duration: 0.4s;
+}
+
+.comprarBtnDiv button:hover{
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+}
+
+.comprarBtnDiv button:after {
+    position: relative;
+    top: 14px;
+    content: "";
+    background: #ffffff;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+
+  .comprarBtnDiv button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  .bannerBtnDiv button{
+    transition-duration: 0.4s;
+    font-size: 13px;
+}
+
+.bannerBtnDiv button a{
+    font-size: 13px;
+}
+
+.bannerBtnDiv button:hover{
+    transition-duration: 0.3s;
+    background-color: #8d8bdb;
+}
+
+ /*************************************FOOTER*************************************************************/
+
+ footer {
+    background-color: #272727;
+    margin: 10px auto;
+ }
+
+.footerNav ul{
+    margin: 13px;
+ }
+
+ footer img.logoPagina {
+    width: 9vw;
+    padding: 10px;
+ }
+
+ footer div.contenidoFooter {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+    justify-content: center;
+ }
+
+ footer h3 {
+    text-align: center;
+    margin: 5px 0 px 0;
+    text-transform: uppercase;
+    color: #272727;
+ }
+
+ footer a{
+     color: #FEF7F7
+ }
+
+ footer .footerNav{
+    width: 100%;
+    display: flex;
+    margin:0;
+ }
+
+ footer .footerNav .enlacesFooter li{
+    padding: 10px;
+}
+
+ footer button{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background: none;
+     height: 30px;
+     padding: 22px;
+ }
+
+ footer .flechaDropdownFooter{
+    transform: rotate(0deg);
+    transition: transform 0.3s linear;
+    height: 4vw;
+ }
+
+ footer .dropdownActivo{
+    transform: rotate(90deg);
+    transition: transform 0.3s linear;
+ }
+
+ footer div.listasEnlaces ul a li{
+    color: #B8B4FE;
+ }
+
+ footer li:hover{
+    color: #6E6BBE;
+ }
+
+ footer div.redesSociales ul li img{
+    width: 4vw;
+ }
+
+ footer div.copiright {
+     background-color: #AEADBF;
+     padding: 5px;
+ }
+
+ footer div.copiright p {
+     text-align: center;
+     display: block;
+     color: #272727;
+     font-size: 12px;
+     padding: 5px 0;
+ }
+  /**************************************************************************************************/
+
+ @media only screen and (min-width: 600px){
+    header {
+        max-height: 60px;
+    }
+
+    p, ul li{
+        font-size: 1.5vw;
+     }
+
+     h2{
+        font-size: 2.7vw;
+     }
+    
+     h3{
+        font-size: 2.5vw;
+     }
+
+     h4{
+        font-size: 1.7vw;
+     }
+    
+     ul li h2{
+         font-size: 1.6vw;
+     }
+
+    header img.logoPagina {
+        margin: 8px 10px;
+        max-height: 60px;
+    }
+
+    header img.menuHamburguesa{
+        margin: 8px 10px;
+        max-height: 60px;
+    }
+    
+    header input {
+        width: 365px;
+        height: 30px;
+        margin: auto 0;
+        display: block;
+        background-color: #FEF7F7;
+        border: solid 1px black;
+        border-radius: 50px;
+        padding-left: 20px;
+    }
+
+    header div.mostrarMenuDesplegable{
+        width: 35%;
+    }
+
+    header div.mostrarMenuDesplegable ul{
+        padding: 0%;
+     }
+    
+     header div.mostrarMenuDesplegable ul li{
+        margin: 10% 0 5% 0;
+     }
+
+     header div.listasRedesSocialesMenu img{
+        width: 4vw;
+        margin: 10px 10px;
+     }
+
+    /******************JUEGO ESTRENO******************************/
+
+    .seccionesCars{
+        width: 100%;
+        height: 850px;
+        top: 5px;
+        left: 0;
+        margin-bottom: 50px;
+    }
+
+    .seccionBannerPaginaJuegoEstreno {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .seccionesCars .textoTitulo{
+        top: 16%;
+    }
+
+    .seccionHistoria p{
+        width: 40%;
+        top: 46%;
+        left: 49%;
+        text-align: justify;
+        padding: 3%;
+    }
+    
+    .seccionHistoria{
+        height: 1000px;
+    }
+    
+    .seccionDescripcion p{
+        width: 80%;
+        top: 63%;
+        left: 9%;
+        text-align: center;
+        padding: 3%;
+    }
+    
+    .seccionDescripcion .textoTitulo{
+        top: 22%;
+    }
+    
+    .seccionDescripcion{
+        height: 750px;
+    }
+    .seccionDescripcion .tituloSeccion{
+        height: 16%;
+        top: 20%;
+    }
+    
+    .seccionModosJuego{
+        height: 700px;
+    }
+     
+    .seccionPersonajes{
+        height: 700px;
+    }
+    
+    .seccionCircuitos{
+        height: 810px;
+    }
+    
+    .seccionPlataformas{
+        height: 700px;
+    }
+    
+    .seccionPlataformas ul{
+        top: 27%;
+    }
+
+    .carruselCars .tituloSeccion{
+        top: -17px;
+        margin: auto;
+        left: 55%;
+    }
+
+    /*************************************************************/
+
+    main section.seccionBannerJuegoEstreno{
+        position: relative;
+    }
+
+     main section.seccionBannerJuegoEstreno img{
+        height: 418px;
+        margin: 27px 0 10px 0;
+    }
+
+    main section.seccionBannerJuegoEstreno .contenidoBanner{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+    }
+    
+    main section.seccionBannerJuegoEstreno .contenidoBanner h2 {
+        font-size: 20px;
+        margin: 0 0 3px 0;
+        text-align: start;
+        padding: 0;
+        z-index: 10;
+    }
+    
+    main .contenidoBanner p {
+        display: block;
+        font-size: 24px;
+        margin: 5px 0 8px 0;
+    }
+    
+    main .contenidoBanner button {
+        width: 148px;
+        height: 30px;
+        font-size: 24px;
+        margin: 8px 0 0 0;
+        padding-bottom: 40px;
+    }
+
+     main h2 {
+         font-size: 24px;
+         padding: 5px 20px;
+     }
+
+     main section ul li {
+        width: fit-content;
+        height: 255px;
+        margin: 0 5px;
+        padding: 2px 10px;
+
+     }
+
+     main section ul li img {
+        width: 150px;
+        height: 145px;
+    }
+
+    .slider h3:hover{
+        color: whitesmoke;
+    }
+    
+    main section ul li h3 {
+        font-size: 16px;
+    }
+    
+    main section ul li button, main section ul li button.btnComprar {
+        width: 114px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    main section ul li button.btnComprar {
+        width: fit-content;
+        padding: 2px 3px;
+        font-size: 14px;
+        background-color: #FEF7F7;
+        color: #272727;
+    }
+
+    .divContenidoBtnComprar p{
+        font-size: 18px;
+    }
+
+    .divContenidoBtnComprar span {
+        font-size: 30px;
+    }
+
+    main section .flecha {
+        width: 25px;
+        padding: 20px;
+    }
+
+    footer .enlacesOcultos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footerNav ul{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .footerNav{
+        display: flex;
+        justify-content: center;
+     }
+    
+     footer .footerNav .enlacesFooter li{
+        padding: 10px;
+    }
+    
+     footer button{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         background: none;
+         height: 30px;
+         padding: 10px 50px;
+     }
+
+    .footerNav ul li{
+        padding-top: 20px;
+        margin: 0 30px;
+    }
+
+    footer img.logoPagina {
+        padding-top: 50px;
+        width: 7vw;
+     }
+
+     .flechaDropdownFooter{
+         display: none;
+     }
+
+     footer div.contenidoFooter {
+        flex-direction: row;
+     }
+    
+     footer div.contenidoFooter {
+        justify-content: space-around;       
+     }
+    
+     footer div.listasEnlaces {
+        margin: 0 0 15px 0;
+     }
+    
+     footer div.listasEnlaces ul{
+        margin: 5px 0px;
+        padding: 0;
+     }
+    
+     footer div.redesSociales ul{
+        display: block;
+        margin: 1% 1%;
+     }
+    
+     footer div.redesSociales ul li{
+        margin: 1% 1%;
+     }
+    
+     footer div.redesSociales ul li img{
+        width: 3vw;
+     }
+    
+     footer div.copiright {
+         background-color: #AEADBF;
+     }
+    
+     footer div.copiright h3 {
+        font-size: 16px;
+        padding: 4px 0;
+     }
+
+     footer h4 {
+         font-size: 20px;
+         text-align: center;
+     }
+  
+ }
+
+
+ /*4 en linea*/
+
+div.contenidoJuego div.divConfiguracionJuego{
+    width: 90%;
+    background-color: rgb(28, 68, 141);
+}
+
+div.contenidoJuego div.divConfiguracionJuego h2#tituloConfiguracion{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    border-radius: 0;
+    background-color: black;
+    margin: 0;
+    padding: 20px 0;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego{
+    width: 100%;
+    align-content: center;
+    margin: 50px auto;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego h3{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego h3:hover{
+    cursor: auto;
+    
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego div{
+    width: 100%;
+    align-content: center;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego button{
+    width: 80px;
+    margin: 5px;
+    background-color: rgb(45, 105, 218);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego button.agrandarBotonDimension {
+    background-color: white;
+    color: black;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores{
+    width: 100%;
+    margin: 50px 0;
+    background-color: rgb(28, 68, 141);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores button{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    margin: 15px 8px;
+    padding: 5px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores button.agrandarFicha {
+    border: solid 5px red;
+    width: 55px;
+    height: 55px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores div.botones{
+    margin: 0 auto;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divBtnIniciarPartida{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divBtnIniciarPartida button{
+    padding: 15px 20px;
+    background-color: rgb(29, 172, 100);
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+section.breadcrumb{
+    width: fit-content;
+    position: relative;
+    top: 70px;
+    left: 30px;
+}
+
+section.breadcrumb ul{
+    display: flex;
+    list-style: none;
+}
+
+section.breadcrumb li{
+    list-style: none;
+    position: relative;
+}
+
+section.breadcrumb li p{
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+
+section.breadcrumb img{
+    width: 100px;
+    height: 40px;
+    opacity: 40%;
+}
+
+section.breadcrumb img.home{
+    width: 70px;
+}
+
+section.breadcrumb img:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+section.breadcrumb p:hover {
+    cursor: pointer;
+}
+
+ main div.titulo {
+    width: 100%;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+ main div.titulo img {
+     width: 50%;
+ }
+
+ main div.titulo h1 {
+    text-align: center;
+    color: #FEF7F7;
+    font-size: 40px;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+main div.contenidoJuego {
+    width: 100%;
+}
+
+main div.imagenJuego {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+}
+
+main #canvas .ocultar {
+    display: none;
+}
+
+main div.imagenJuego img {
+    width: 100%;
+    opacity: 70%;
+}
+
+main div.imagenJuego button {
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    top: 47%;
+    left: 43%;
+    font-size: 2vw;
+    text-align: center;
+}
+
+main div.contenidoJuego {
+    display: flex;
+    justify-content: center;
+}
+
+main div.botones4enLinea {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    width: 3%;
+}
+
+div.botones4enLinea img{
+    width: 40px;
+    margin: 5px;
+}
+
+.favorito {
+    opacity: 40%;
+}
+
+.seleccionado {
+    opacity: 100%;
+}
+
+main div.botones4enLinea div.contenedorCompartir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ocultar{
+    display: none;
+}
+
+div.botones4enLinea img:hover{
+    cursor: pointer;
+    animation: ease-in;
+}
+
+main section.slider {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+}
+
+main section.slider img{
+    width: 200px;
+}
+
+main section.slider ul.galeria {
+    display: flex;
+    animation: cambio 20s infinite;
+    width: 400%;
+}
+
+.comentario span {
+    font-size: 6px;
+}
+
+.comentario img {
+    width: 12px;
+    border-radius: 50%;
+}
+
+div.comentario div.contenido img{
+    width: 30px;
+    height: 43px;
+}
+
+.comentario p {
+    font-size: 15px;
+}
+
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+main section.slider ul.galeria li {
+    width: 200px;
+    list-style: none;
+    background-color: transparent;
+}
+
+main section.instrucciones div.titulo{
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.instrucciones div.titulo img{
+    width: 100%;
+}
+
+main section.instrucciones div.titulo h2{
+    position: absolute;
+    top: 18%;
+    text-align: center;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+main section.instrucciones div.contenido{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.instrucciones div.contenido img{
+    width: 100%;
+    height: 500px;
+}
+
+main section.instrucciones div.contenido p{
+    position: absolute;
+    background-color: transparent;
+    font-size: 27px;
+    color: #FEF7F7;
+}
+
+main section.instrucciones div.contenido p.p1{
+    top: 15%;
+    left: 22%;
+    width: 65%;
+}
+
+main section.instrucciones div.contenido p.p2{
+    top: 40%;
+    left: 18%;
+    width: 65%;
+}
+
+main section.instrucciones div.contenido :last-child{
+    top: 70%;
+    left: 14%;
+    width: 65%;
+}
+
+main section.comunidad {
+    background-color: #D8D6FF;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+main section.comunidad div.titulo {    
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.comunidad div.titulo img{
+    width: 100%;
+}
+
+main section.comunidad div.titulo h2{
+    position: absolute;
+    top: 18%;
+    text-align: center;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+main section.comunidad div.escribirComentario { /*COMENTARIOS*/
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+main section.comunidad div.escribirComentario  img{
+    width: 6%;
+    margin-right: 5px;
+}
+
+main section.comunidad div.escribirComentario  input{
+    width: 91%;
+    border: solid rgb(138, 138, 138) 3px;
+    background-color: #FEF7F7;
+    height: 35px;
+    margin: auto 0;
+    padding-left: 9px;
+    color:  rgb(138, 138, 138) 3px;;
+}
+
+main section.comunidad div.escribirComentario  button{
+    background-color: #272727;
+    color: #FEF7F7;
+    height: 35px;
+    margin-left: 85%;
+    padding: 0 6px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+main section.comunidad div.comentarios {
+    width: 50%;
+    margin: 0 auto;
+}
+
+main section.comunidad div.comentarios div.comentario{
+    border-top: 1px solid #a5a3a3;
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido{
+    display: flex;
+    justify-content: space-between;
+    color: #1F0328;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido div{
+    display: flex;
+    justify-content: start;
+    width: 88%;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido img{
+    width: 6%;
+    margin-right: 4px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido p.hora{
+    font-size: 11px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido span{
+    font-size: 18px;
+    font-weight: bold;
+    color: #272727;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido p{
+    color: #272727;
+    font-size: 16px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios img{
+    width: 15px;
+    margin-right: 7px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios img:hover{
+    cursor: pointer;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios p{
+    margin-right: 7px;
+    color: #969393;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios h4{
+    font-size: 12px;
+    color: #969393;
+    margin-left: 7px;
+}
+
+main section.seccionPersonajesCarrusel {
+    width: 100%;
+    position: relative;
+}
+
+main section.seccionPersonajesCarrusel .flecha {
+    width: 25px;
+    padding: 20px;
+    background-color: #FEF7F7;
+    border-radius: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+main section.seccionPersonajesCarrusel .flechaIzquierda {
+    left: 40px;
+    top: 170px;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+main section.seccionPersonajesCarrusel .flechaDerecha {
+    right: 40px;
+    top: 170px;
+    transform: translate(50%, -50%);
+    
+}
+
+main section.seccionPersonajesCarrusel ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    overflow: hidden;
+    margin: 0 5px;
+    scroll-behavior: [auto smooth];
+}
+
+main section.seccionPersonajesCarrusel ul li {
+    position: relative;
+    width: fit-content;
+    height: 320px;
+    padding: 2px 0px;
+    margin: 2px 5px;
+    background-color: transparent;
+    border-radius: 0;
+    border: solid 2px rgb(86, 98, 255);
+}
+
+main section.seccionPersonajesCarrusel ul li:hover{
+    border: solid 2px rgb(194, 52, 147);
+}
+
+main section.seccionPersonajesCarrusel ul li img{
+    width: 270px;
+}
+
+.carruselCars{
+    height: 400px;
+}
+
+.carruselCars .textoTitulo{
+    top: -30px;
+}
+
+.carruselCars .tituloSeccion{
+    top: -17px;
+    margin: auto;
+    left: 16%;
+}
+
+.seccionPersonajes ul li h2{
+    background: none;
+}
+
+.estirar {
+    height: 100%;
+}
