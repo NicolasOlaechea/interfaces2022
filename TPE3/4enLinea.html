@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/scrollHeader.js"></script>
     <script src="js/menuDesplegable.js"></script>
     <script src="js/comportamiento.js"></script>
     <script src="js/likesComentarios.js"></script>
@@ -13,34 +14,35 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <a href="index.html"><img class="logoPagina" src="imagenes/logoPagina.png" alt="Logo pagina"></a>
-        <input type="text" placeholder="Buscar juego...">
-        <img class="menuHamburguesa" id="menuHamburguesa" src="imagenes/menuHamburguesa.png" alt="Menu hamburguesa">
-        
+    <header id="header" class="header">
+        <a href="index.html"><img class="logoPagina" src="imagenes/logoPagina.png" alt="Logo pagina" id="logoPagina"></a>
+        <input type="text" placeholder="Buscar juego..." />
+        <img class="menuHamburguesa" id="menuHamburguesa" src="imagenes/menuHamburguesa.png" alt="Menu hamburguesa"/>
+  
         <div class="menuDesplegable" id="menuDesplegable">
-            <div class="divImagenCruz">
-                <img class="cruz" id="cruz" src="imagenes/cruz.png" alt="Cruz">    
-            </div>            
+          <div class="divImagenCruz">
+            <img class="cruz" id="cruz" src="imagenes/cruz.png" alt="Cruz" />
+          </div>
+          <ul>
+            <a href="index.html" id="itemMenu1"><li>Home</li></a>
+            <a href="#" id="itemMenu2"><li>Mi perfil</li></a>
+            <a href="#" id="itemMenu3"><li>Favoritos</li></a>
+            <a href="juego-estreno.html" id="itemMenu4"><li>Estrenos</li></a>
+            <a href="#" id="itemMenu5"><li>Categorias</li></a>
+            <a href="#" id="itemMenu6"><li>Comunidad</li></a>
+          </ul>
+  
+          <div class="listasRedesSocialesMenu" id="itemMenu7">
             <ul>
-                <li>Home</li>
-                <li>Mi perfil</li>
-                <li>Favoritos</li>
-                <li>Estrenos</li>
-                <li>Categorias</li>
-                <li>Comunidad</li>
+              <li><img src="imagenes/fb.png" alt="Facebook" /></li>
+              <li><img src="imagenes/tw.png" alt="Twitter" /></li>
+              <li><img src="imagenes/ig.png" alt="Instagram" /></li>
+              <li><img src="imagenes/yt.png" alt="Youtube" /></li>
             </ul>
-            
-            <div class="listasRedesSocialesMenu">
-                <ul>
-                    <li><img src="imagenes/fb.png" alt="Facebook"></li>
-                    <li><img src="imagenes/tw.png" alt="Twitter"></li>
-                    <li><img src="imagenes/ig.png" alt="Instagram"></li>
-                    <li><img src="imagenes/yt.png" alt="Youtube"></li>
-                </ul>
-            </div>
+          </div>
         </div>
-    </header>
+      </header>
+      <div id="fondoOscuro" class="fondoOscuroHide"></div>
 
     <section class="breadcrumb">
         <ul>
@@ -59,6 +61,7 @@
 
             <div class="contenidoJuego">
                 <canvas id="canvas" class="canvas ocultar" width="1200" height="600"></canvas>
+                
                 <div id="divImagenJuego" class="imagenJuego">
                     <img src="imagenes/bocavsriver.png" alt="4 en linea">
                     <div class="divJugarBtn">
@@ -98,8 +101,11 @@
                         </div>
                     </div>
                     <div id="divBtnIniciarPartida" class="divBtnIniciarPartida">
-                        <button id="btnIniciarPartida">Iniciar partida</button>
+                        <button id="btnIniciarPartida" class="deshabilitar">Iniciar partida</button>
                     </div>
+                    <div id="divError" class="divError">
+                      <h6>Debes elegir una dimension y las fichas de los jugadores para continuar</h6>
+                  </div>
                 </div>
     
                 <div class="botones4enLinea" id="botones4enLinea">
@@ -119,7 +125,9 @@
                 </div>
             </div>
         </div>
-        
+        <div class="divBtnReiniciar">
+          <button id="btnReiniciar" class="btnReiniciar ocultar">Reiniciar Juego</button>
+        </div>
         <section class="slider">
             <ul class="galeria">
                 <li>

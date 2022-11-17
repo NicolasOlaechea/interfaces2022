@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
-    
-    let dimension = 4;
+
+    let dimension = null;
     let tiempoJuego = 120;
     let fichasJ1 = [];
     let fichasJ2 = [];
@@ -10,70 +10,164 @@ document.addEventListener("DOMContentLoaded", function(){
     let mouseApretado = false;
     let turno = 1;
     let fichasUbicadas = [];
-    let imagenJ1 = "";
-    let imagenJ2 = "";
+    let imagenJ1 = null;
+    let imagenJ2 = null;
     let huboGanador = false;
     let tablero = new Tablero(ctx, 200, 50, 600, 450, canvas.width, canvas.height);
     let tiempoOriginal = tiempoJuego;
+    let btnReiniciar = document.getElementById("btnReiniciar");
+    let selecciono = 0;
+    btnReiniciar.addEventListener("click", function(){
+        reiniciarJuego();
+    });
 
+    function dibujarFondo(){
+        //ctx.fillStyle = "black";
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        let fondo = new Image();
+        fondo.src = "js/4enLinea/fondoCanvas.png";
+        fondo.onload = function(){
+            interval_id = setInterval(() => {
+
+                fondo.style.opacity = "0.2";
+                ctx.drawImage(fondo, this.x, this.y, this.width, this.height);
+                tablero.llenarCeldasSoltarFichas();
+                tablero.llenarMatrizCeldas();
+                dibujarBotonReiniciar();
+                dibujarFichas();
+                dibujarTiempoJuego();
+            },1);
+          }
+    }
+
+    let botonIniciarPartida = document.getElementById("btnIniciarPartida");
+    botonIniciarPartida.disabled = true;
     //Cambiar dimension
     let boton4EnLinea = document.getElementById("boton4EnLinea");
     boton4EnLinea.addEventListener("click", function(){
         dimension = 4;
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let boton5EnLinea = document.getElementById("boton5EnLinea");
     boton5EnLinea.addEventListener("click", function(){
         dimension = 5;
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let boton6EnLinea = document.getElementById("boton6EnLinea");
     boton6EnLinea.addEventListener("click", function(){
         dimension = 6;
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let boton7EnLinea = document.getElementById("boton7EnLinea");
     boton7EnLinea.addEventListener("click", function(){
         dimension = 7;
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
 
     //Cambiar imagen ficha1
     let fichaBoca1 = document.getElementById("fichaBoca1");
     fichaBoca1.addEventListener("click", function(){
         imagenJ1="boca1";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let fichaRiver1 = document.getElementById("fichaRiver1");
     fichaRiver1.addEventListener("click", function(){
         imagenJ1="river1";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let fichaMessi1 = document.getElementById("fichaMessi1");
     fichaMessi1.addEventListener("click", function(){
         console.log("click en messi");
         imagenJ1="messi1";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let fichaMaradona1 = document.getElementById("fichaMaradona1");
     fichaMaradona1.addEventListener("click", function(){
         imagenJ1="maradona1";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
 
     //Cambiar imagen ficha2
     let fichaBoca2 = document.getElementById("fichaBoca2");
     fichaBoca2.addEventListener("click", function(){
         imagenJ2="boca2";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let fichaRiver2 = document.getElementById("fichaRiver2");
     fichaRiver2.addEventListener("click", function(){
         imagenJ2="river2";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let fichaMessi2 = document.getElementById("fichaMessi2");
     fichaMessi2.addEventListener("click", function(){
         imagenJ2="messi2";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
     let fichaMaradona2 = document.getElementById("fichaMaradona2");
     fichaMaradona2.addEventListener("click", function(){
         console.log("click en maradona");
         imagenJ2="maradona2";
+        selecciono = selecciono+1;
+        if(dimension !=null && imagenJ1 !=null && imagenJ2 !=null){
+            botonIniciarPartida.disabled = false;
+            botonIniciarPartida.classList.remove("deshabilitar");
+        }
     });
 
-    let botonIniciarPartida = document.getElementById("btnIniciarPartida")
-    botonIniciarPartida.addEventListener("click", function(){ //Inicializo el juego
+    let divError = document.getElementById("divError");
+
+    //botonIniciarPartida.disabled = true;
+    /*if(selecciono == 3){
+        botonIniciarPartida.disabled = false;
+        botonIniciarPartida.classList.remove("deshabilitar");
+    }*/
+
+    botonIniciarPartida.addEventListener("click", function(e){ //Inicializo el juego
+        dibujarFondo();
         tablero.llenarCeldasSoltarFichas(dimension);
         tablero.llenarMatrizCeldas(dimension);
         tablero.setHuboGanador(false);
@@ -122,19 +216,21 @@ document.addEventListener("DOMContentLoaded", function(){
             let texto = tiempoJuego + " restantes";
             ctx.font = "20px Arial";
             ctx.fillStyle = "black";
-            ctx.fillText(texto, (1200/2)-100, 578);
+            ctx.fillText(texto, (1200/2)-50, 530);
         }
         dibujarBotonReiniciar();
     }
 
     function dibujarBotonReiniciar(){ //Dibujo el boton reiniciar
-        ctx.fillStyle = "#E22F2F";
+        /*ctx.fillStyle = "#E22F2F";
         ctx.fillRect((1200/2)+60, 555, 80, 30);
 
         let txt = "Reiniciar";
         ctx.font = "20px Arial";
         ctx.fillStyle = "white";
-        ctx.fillText(txt, (1200/2)+61, 578);
+        ctx.fillText(txt, (1200/2)+61, 578);*/
+        let btnReiniciar = document.getElementById("btnReiniciar");
+        btnReiniciar.classList.remove("ocultar");
     }
 
     function reiniciarJuego(){ //Reinicio el juego, se llama cuando se hace click en el boton o cuando acaba el tiempo

@@ -522,4 +522,23 @@ class Tablero{
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+    dibujarFondo(ctx){
+        //ctx.fillStyle = "black";
+        //ctx.fillRect(this.x, this.y, this.width, this.height);
+        let fondo = new Image();
+        fondo.src = "js/4enLinea/fondoCanvas.png";
+        fondo.onload = function(){
+            fondo.style.opacity = "0.2";
+            ctx.filter = 'blur(6px)';
+            ctx.drawImage(fondo, this.x, this.y, this.width, this.height);
+            ctx.filter = "none";
+            /*fondo.style.zIndex=1;
+            tablero.llenarCeldasSoltarFichas(dimension);
+            tablero.llenarMatrizCeldas(dimension);
+            tablero.setHuboGanador(false);
+            dibujarBotonReiniciar();
+            dibujarFichas();
+            dibujarTiempoJuego()*/
+          }
+    }
 }

@@ -30,7 +30,7 @@ class Ficha{
         return this.ficha.src;
     }
 
-    setImagenFicha(imagen){
+    setImagenFicha(imagen, ctx){
         this.ficha.src = "js/4enLinea/"+imagen+".png";
     }
 
