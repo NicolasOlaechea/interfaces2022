@@ -1,0 +1,2545 @@
+* { 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    font-family: Roboto, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /*Cambiar*/
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#canvas {
+    background-color: red;
+}
+
+.divBtnReiniciar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btnReiniciar {
+    margin: auto;
+    width: auto;
+    background-color: rgb(211, 17, 17);
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    height: 50px;
+    padding: 5px 10px;
+}
+
+.btnReiniciar:hover {
+    cursor: pointer;
+    background-color: rgb(255, 103, 103);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.contenedorLoader {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    top:0;
+    position: fixed;
+    z-index: 10000;
+}
+
+.ocultarContenedorLoader {
+    display: none;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: solid 10px #FEF7F7;
+    border-bottom: solid transparent 10px;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+    margin: 15px;
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.barra {
+    width: 26%;
+    height: 1%;
+    background-color: rgb(172, 172, 172);
+    border-radius: 50px;
+}
+
+.progreso {
+    width: 0%;
+    height: 100%;
+    background-color: #FEF7F7;
+    border-radius: 50px;
+    animation: aumentar 5s linear infinite;
+}
+
+@keyframes aumentar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+ li, h1, h2, h3, h4, h5, h6, p, button{
+     color: #FEF7F7;
+ }
+
+ p, ul li, a{
+    font-size: 2.2vw;
+ }
+
+a{
+    font-size: 1.3vw;
+ }
+
+ h2{
+    font-size: 2.9vw;
+ }
+
+ h3{
+    font-size: 2.7vw;
+ }
+
+ h4{
+    font-size: 2.4vw;
+ }
+
+ ul li h2{
+     font-size: 2.5vw;
+ }
+
+ header, header div.divImagenMenuHamburguesa, header div.mostrarMenuDesplegable, header div.divImagenCruz, 
+ header div.listasRedesSocialesMenu ul, main section.seccionBannerJuegoEstreno .contenidoBanner, 
+ main section ul, main section ul li, footer div.listasRedesSociales, footer div.redesSociales ul{
+    display: flex;
+ }
+
+ header,  main, main section.seccionBannerJuegoEstreno, main section.seccionBannerJuegoEstreno img, 
+ main .contenidoBanner h2, main section.seccionRecomendados, main section.seccionJuegos,footer{
+    width: 100%;
+ }
+
+/*Oculto y muestro el menu desplegable con "header div.menuDesplegable"*/
+header input,  header div.menuDesplegable, .ocultarLogoMenuHamburguesa/*CON JS*/, main .contenidoBanner p, footer .enlacesOcultos{
+    display: none;
+}
+
+body {
+    background: #4A0065;
+    background: linear-gradient(0deg, #1F0328 0%,#4A0065 100%);
+    transition: 1s;
+ }
+
+ .juegoEstreno{
+    background: #4A0065;
+    background: linear-gradient(0deg, #320000 0%,#5C0000 100%);
+    transition: 1s;
+ }
+
+/*************************************HEADER*************************************************************/
+
+ header {
+     max-height: 45px;
+     background-color: #6E6BBE;
+     justify-content: space-between;
+     top:0;
+     position: fixed;
+     z-index: 10000000000000000000000;
+ }
+
+ #header {
+    z-index: 10000000000000000000000;
+ }
+
+ header img.logoPagina {
+    width: 30px;
+    height: 30px;
+    margin: 3px 10px;
+}
+
+.logoPagina, img.menuHamburguesa, .cruz:hover {
+    cursor: pointer;
+}
+
+header img.menuHamburguesa{
+    width: 30px;
+    height: 30px;
+    margin: 3px 10px;
+}
+
+  header div.divImagenMenuHamburguesa {
+      justify-content: flex-end;
+  }
+
+ .fondoOscuroHide{
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+ .fondoOscuro{ 
+    transition: opacity 1s linear;
+    opacity: 0.5;
+    position: fixed;
+    border: #1F0328;
+    background-color: rgb(0, 0, 0) ;
+    width: 100%;
+    height: 1000px;
+    z-index: 5;
+}
+
+header div.mostrarMenuDesplegable { /*CON JS*/
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+    width: 50%;
+    background-color: #6E6BBE;
+    z-index: 6;
+ }
+
+ header div.mostrarMenuDesplegable ul{
+    text-align: center;
+    padding: 5%;
+ }
+
+ header div.mostrarMenuDesplegable ul li{
+    margin: 15% 0 5% 0;
+ }
+
+ header div.mostrarMenuDesplegable ul a li:hover{
+    color: #B8B4FE;
+ }
+
+ header div.divImagenCruz {
+     justify-content: flex-end;
+     align-items: flex-end;
+ }
+
+ .cruz {
+     position: relative;
+     top: -6px;
+     left: -2px;
+     margin: 5px 7px 0 0;
+     animation: mostrarCruzGrande .6s ease-in;
+     width: 70px;
+     height: 70px;
+     background-image: url("../imagenes/cruz.png");
+     background-size: cover;
+ }
+
+ .cruzGrande {
+    top: -6px;
+    left: -2px;
+    animation: mostrarCruzGrande .6s ease-in;
+    width: 70px;
+    height: 70px;
+ }
+
+ .cruzChica {
+    animation: mostrarCruzChica .6s ease-in;
+    width: 55px;
+    height: 55px;
+ }
+
+ @keyframes mostrarCruzGrande{
+     0%{
+        background-image: url("../imagenes/menuHamburguesa.png");
+        width: 70px;
+        height: 70px;
+        opacity: .5;
+     }
+     50%{
+         opacity: .5;
+     }
+     100%{
+        background-image: url("../imagenes/cruz.png");
+        width: 70px;
+        height: 70px;
+        opacity: 1;
+        transform: rotate(360deg);
+     }
+ }
+
+ @keyframes mostrarCruzChica{
+    0%{
+       background-image: url("../imagenes/menuHamburguesa.png");
+       width: 55px;
+       height: 55px;
+       opacity: .5;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+       background-image: url("../imagenes/cruz.png");
+       width: 55px;
+       height: 55px;
+       opacity: 1;
+       transform: rotate(360deg);
+    }
+}
+
+ .ocultarItemMenu {
+    visibility: hidden;
+ }
+
+ header div.listasRedesSocialesMenu ul{
+    justify-content: center;
+ }
+
+ header div.listasRedesSocialesMenu img, footer .listasRedesSociales img{
+    width: 7vw;
+    margin: 5px 5px;
+    opacity: 0.4;
+    transition: 0.3s linear;
+ }
+
+ header div.listasRedesSocialesMenu img:hover, footer .listasRedesSociales img:hover{
+    transition: 0.3s linear;
+    opacity: 1;
+ }
+
+/****************************************************/
+
+main h2 {
+    width: fit-content;
+    background-color: #873FA0;
+    text-align: center;
+    padding: 3px 20px;
+    margin: 14px auto 2px auto ;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 16px;
+}
+
+ main section.seccionBannerJuegoEstreno img{
+    position: relative;
+    top: 12px;
+    height: 160px;
+    margin: 27px 0 0 0;
+    opacity: 60%;
+}
+
+main section.seccionBannerJuegoEstreno .contenidoBanner{
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main .contenidoBanner h2 {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: start;
+    margin: 0 0 1px 0;
+}
+
+main .contenidoBanner h2 a{
+    font-size: 2.5vw;
+}
+
+main .contenidoBanner p {
+    font-size: 12px;
+    margin: 2px 0 4px 0;
+}
+
+main .contenidoBanner a {
+    color: #FEF7F7;
+}
+
+main .contenidoBanner button {
+    width: 100px;
+    height: 20px;
+    font-size: 16px;
+    background-color: #6E6BBE;
+    border-radius: 30px;
+    margin: 4px auto 0 auto;
+    padding-bottom: 23px;
+}
+
+main section.seccionRecomendados, main section.seccionJuegos {
+    margin: 0px auto 20px 0;
+    position: relative;
+}
+
+main section .flecha {
+    width: 20px;
+    padding: 15px;
+    background-color: #FEF7F7;
+    border-radius: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+main section .flechaIzquierda {
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+main section .flechaDerecha {
+    right: 40px;
+    top: 50%;
+    transform: translate(50%, -50%);
+    
+}
+
+main section ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    overflow: hidden;
+    margin: 0 32px;
+    scroll-behavior: [auto smooth];
+}
+
+main section ul li {
+    width: fit-content;
+    height: 160px;
+    background-color: #B8B4FE;
+    margin: 2px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 2px 10px;
+}
+
+main section ul li img, h3, button:hover {
+    cursor: pointer;
+}
+
+main section ul li img {
+    width: 110px;
+    height: 60%;
+    border-radius: 5px;
+}
+
+main section ul li h3 {
+    font-size: 12px;
+    margin: 0 auto;
+    color: #4A0065;
+}
+
+.divContenidoBtnComprar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(17, 17, 17, 0.315);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.divContenidoBtnComprar p{
+    font-size: 15px;
+    font-weight: bold;
+    color: #FEF7F7;
+    margin: 0 2px;
+    padding-bottom: 3px;
+}
+
+.divContenidoBtnComprar span{
+    font-weight: bold;
+    font-size: 22px;
+    color: #d8db23;
+    padding-bottom: 3px;
+}
+
+main section ul li button, main section ul li button.btnComprar, .divJugarBtn button {
+    width: 50px;
+    height: 23px;
+    font-size: 15px;
+    background-color: #4fc572cc;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 2px 5px 2px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 10px -15px #111; 
+    transition-duration: 0.4s;
+    
+}
+
+main section ul li button:hover, .divJugarBtn button:hover {
+    transition-duration: 0.3s;
+    background-color: #40d86dcc;
+}
+
+main section ul li button:after, .divJugarBtn button:after {
+    position: relative;
+    top: 59px;
+    content: "";
+    background: #30bd5a;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+  
+  main section ul li button:active:after, .divJugarBtn button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+main section ul li button.btnComprar {
+    background-color: #FEF7F7;
+    color: #272727;
+    font-weight: bold;
+    width: fit-content;
+    padding: 0px 3px 1px 3px;
+    margin-top: 3px;
+    font-size: 14px;
+
+}
+
+.comprarBtnDiv button{
+    transition-duration: 0.4s;
+}
+
+.comprarBtnDiv button:hover{
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+}
+
+.comprarBtnDiv button:after {
+    position: relative;
+    top: 14px;
+    content: "";
+    background: #ffffff;
+    display: block;
+    padding-top: 100%;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.5s
+  }
+
+  .comprarBtnDiv button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  .bannerBtnDiv button{
+    transition-duration: 0.4s;
+    font-size: 13px;
+}
+
+.bannerBtnDiv button a{
+    font-size: 13px;
+}
+
+.bannerBtnDiv button:hover{
+    transition-duration: 0.3s;
+    background-color: #8d8bdb;
+}
+
+ /*************************************FOOTER*************************************************************/
+
+ footer {
+    background-color: #272727;
+    margin: 10px auto;
+ }
+
+.footerNav ul{
+    margin: 13px;
+ }
+
+ footer img.logoPagina {
+    width: 9vw;
+    padding: 10px;
+ }
+
+ footer div.contenidoFooter {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+    justify-content: center;
+ }
+
+ footer h3 {
+    text-align: center;
+    margin: 5px 0 px 0;
+    text-transform: uppercase;
+    color: #272727;
+ }
+
+ footer a{
+     color: #FEF7F7
+ }
+
+ footer .footerNav{
+    width: 100%;
+    display: flex;
+    margin:0;
+ }
+
+ footer .footerNav .enlacesFooter li{
+    padding: 10px;
+}
+
+ footer button{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background: none;
+     height: 30px;
+     padding: 22px;
+ }
+
+ footer .flechaDropdownFooter{
+    transform: rotate(0deg);
+    transition: transform 0.3s linear;
+    height: 4vw;
+ }
+
+ footer .dropdownActivo{
+    transform: rotate(90deg);
+    transition: transform 0.3s linear;
+ }
+
+ footer div.listasEnlaces ul a li{
+    color: #B8B4FE;
+ }
+
+ footer li:hover{
+    color: #6E6BBE;
+ }
+
+ footer div.redesSociales ul li img{
+    width: 4vw;
+ }
+
+ footer div.copiright {
+     background-color: #AEADBF;
+     padding: 5px;
+ }
+
+ footer div.copiright p {
+     text-align: center;
+     display: block;
+     color: #272727;
+     font-size: 12px;
+     padding: 5px 0;
+ }
+  /**************************************************************************************************/
+
+ @media only screen and (min-width: 600px){
+    header {
+        max-height: 70px;
+        padding: 4px 0;
+        z-index: 100000000;
+    }
+
+    p, ul li{
+        font-size: 1.5vw;
+     }
+
+     h2{
+        font-size: 2.7vw;
+     }
+    
+     h3{
+        font-size: 2.5vw;
+     }
+
+     h4{
+        font-size: 1.7vw;
+     }
+    
+     ul li h2{
+         font-size: 1.6vw;
+     }
+
+    header img.logoPagina {
+        width: 70px;
+        margin: auto 10px;
+        height: 70px;
+    }
+
+    header img.menuHamburguesa{
+        width: 70px;
+        margin: auto 10px;
+        height: 70px;
+    }
+
+    .achicarHeader {
+        animation: achicarHeader .3s ease-out;
+        max-height: 55px;
+    }
+
+    header img.achicarLogo {
+        animation: achicarLogo .2s;
+        height: 55px;
+        width: 55px;
+    }
+
+    .agrandarHeader {
+        animation: agrandarHeader .2s;
+        max-height: 70px;
+    }
+
+    header img.agrandarLogo {
+        animation: agrandarLogo .2s;
+        height: 70px;
+        width: 70px;
+    }
+
+    @keyframes achicarHeader{
+        0%{
+            max-height: 70px;
+        }
+        100%{
+            max-height: 55px;
+        }
+    }
+
+    @keyframes achicarLogo{
+        0%{
+            width: 70px;
+            height: 70px;
+        }
+        100%{
+            width: 55px;
+            height: 55px;
+        }
+    }
+    
+    @keyframes agrandarHeader{
+        0%{
+            max-height: 55px;
+        }
+        100%{
+            max-height: 70px;
+        }
+    }
+
+    @keyframes agrandarLogo{
+        0%{
+            width: 55px;
+            height: 55px;
+        }
+        100%{
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    header input {
+        width: 365px;
+        height: 30px;
+        margin: auto 0;
+        display: block;
+        background-color: #FEF7F7;
+        border: solid 1px black;
+        border-radius: 50px;
+        padding-left: 20px;
+    }
+
+    header div.mostrarMenuDesplegable{
+        width: 35%;
+    }
+
+    header div.mostrarMenuDesplegable ul{
+        padding: 0%;
+     }
+    
+     header div.mostrarMenuDesplegable ul li{
+        margin: 10% 0 5% 0;
+     }
+
+     header div.listasRedesSocialesMenu img{
+        width: 4vw;
+        margin: 10px 10px;
+     }
+
+    /******************JUEGO ESTRENO******************************/
+    .mostrarItemMenuDesplegable {
+        visibility: visible;
+        position: relative;
+        animation: mostrarItemMenuDesplegable 1s linear;
+    }
+
+    @keyframes mostrarItemMenuDesplegable {
+        0%{
+            left: 100%;
+        }
+        100%{
+            left: 0;
+        }
+    }
+
+    .seccionBannerPaginaJuegoEstreno {
+        position: relative;
+        top: 40px;
+        left: 0;
+        margin: 10px 0 50px 0;
+        height: 700px;
+    }
+    
+    .bannerEstreno1, .bannerEstreno2, .bannerEstreno3 {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .bannerEstreno1 {
+        height: 100%;
+        background-image: url("../imagenes/juego-estreno/banner1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .bannerEstreno2{ /*cielo*/
+        width: 100%;
+        height: 40%;
+        left: 0;
+        background-image: url("../imagenes/juego-estreno/cielo3\ -\ copia.png");
+        background-repeat: repeat-x;
+        z-index: -1;
+        animation: moverCielo 12s linear infinite;
+        
+    }
+    
+    .bannerEstreno3 {
+        position: absolute;
+        height: 100%;
+        background-image: url("../imagenes/juego-estreno/banner3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 20px;
+        z-index: 100;
+        top: 0;
+        left: 0;
+    }
+    .bannerEstreno4{ /*pajaros*/
+        width: 100%;
+        height: 60%;
+        left: 0;
+        background-image: url("../imagenes/juego-estreno/nubes2.png");
+        background-repeat: repeat-x;
+        z-index: 100;
+        animation: moverPajaros 9s linear infinite;
+        opacity: 1;
+        
+    }
+    @keyframes moverPajaros{
+        0%{
+            background-position: 0px 0px;
+        }
+        100%{
+            background-position: 1923px 0px;
+        }
+    }
+
+    @keyframes moverCielo{
+        0%{
+            background-position: 0px 0px;
+        }
+        100%{
+            background-position: 600px 0px;
+        }
+    }
+    
+    .bannerEstreno2,  .seccionBannerPaginaJuegoEstreno button, 
+    .seccionBannerPaginaJuegoEstreno .car, .seccionBannerPaginaJuegoEstreno .polvo{
+        position: absolute;
+        z-index: 2;
+    }
+    
+    .animatedDivBtn{
+        width: 27%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100000;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: animarDivBtn 5s ease forwards;
+      }
+
+      @keyframes animarDivBtn{
+        0%{
+            top: 100%;
+            opacity: 0;
+        }
+        100%{
+            top: 50%;
+            opacity: 1;
+        }
+    }
+    
+      .animatedDivBtn a{
+        text-transform:uppercase;
+        padding: 3% 0.5%;
+        display: block;
+        width: auto;
+        color: rgba(211, 211, 211, 0.712);
+        border: 2px solid rgba(211, 211, 211, 0.712);
+        letter-spacing: 2px;
+        text-align: center;
+        position: relative;
+        transition: all .35s;
+      }
+      
+    
+      .animatedDivBtn a span{
+        position: relative;
+        z-index: 2;
+      }
+    
+      .animatedDivBtn a:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(212, 58, 58, 0.712);
+        transition: all .35s;
+      }
+    
+      .animatedDivBtn a:hover{
+        color: #fff;
+      }
+      
+    .animatedDivBtn a:hover:after{
+        width: 100%;
+      }
+    
+    .seccionBannerPaginaJuegoEstreno .car{
+        top: 68%;
+        left: 40%;
+        width: 25%;
+        z-index: 100;
+        animation: moverAutoBanner 1s  infinite alternate;
+    }
+
+    @keyframes moverAutoBanner{
+        0%{
+            transform: skewX(10deg);
+        }
+        50%{
+            transform: skewX(5deg);
+        }
+        100%{
+            transform: skewX(0deg);
+        }
+    }
+    
+    .seccionBannerPaginaJuegoEstreno .polvo{
+        z-index: 50;
+        left: 10%;
+        top: 15%;
+        width: 80%;
+        animation: moverPolvo .3s  infinite alternate;
+    }
+
+    @keyframes moverPolvo{
+        0%{
+            transform: skewX(5deg);
+            opacity: .8;
+        }
+        50%{
+            transform: skewX(3deg);
+            opacity: .7;
+        }
+        100%{
+            transform: skewX(0deg);
+            opacity: .8;
+        }
+    }
+
+    .spritesheet{
+        width: 200px;
+        height: 130px;
+        animation: moverAuto 0.7s steps(5) infinite;
+    }
+
+    .spritesheet1{
+        background-image: url("../imagenes/juego-estreno/auto.png");
+    }
+
+    .spritesheet2{
+        background-image: url("../imagenes/juego-estreno/auto2.png");
+    }
+
+    .spritesheet3{
+        background-image: url("../imagenes/juego-estreno/auto3.png");
+    }
+
+    @keyframes moverAuto{
+        0%{
+            background-position: 0px;
+        }
+        100%{
+            background-position: -1000px;
+        }
+    }
+
+    .divContenidoTitulo {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+
+    .divContenidoTituloPersonajes {
+        margin-bottom: 50px;
+        position: relative;
+        top: -15px;
+    }    
+
+    .subirTituloSeccionPersonajes {
+        animation: subirTituloSeccionPersonajes 2s;
+        top: -15px;
+    }
+
+    @keyframes subirTituloSeccionPersonajes{
+        0%{
+            top: 15px;
+        }
+        100%{
+            top: -15px;
+        }
+    }
+
+    .bajarTituloSeccionPersonajes {
+        animation: bajarTituloSeccionPersonajes 2s;
+        top: 25px;
+    }
+
+    @keyframes bajarTituloSeccionPersonajes{
+        0%{
+            top: -15px;
+        }
+        100%{
+            top: 25px;
+        }
+    }
+
+    .restaurarTituloSeccionPersonajes {
+        animation: restaurarTituloSeccionPersonajes 2s;
+        top: -15px;
+    }
+
+    @keyframes restaurarTituloSeccionPersonajes{
+        0%{
+            top: 25px;
+        }
+        100%{
+            top: -15px;
+        }
+    }
+
+    .seccionesCars .tituloSeccion {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        width: 40%;
+        height: 100px;
+        background-image: url("../imagenes/juego-estreno/fondo-titulos-cars.png");
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .seccionesCars .tituloSeccionPersonajes {
+        margin-bottom: 15px;
+    }
+
+    .tituloSeccion .textoTitulo {
+        background: none;
+        font-size: 35px;
+    }
+    
+    .seccionHistoria {
+        margin-top: 80px;
+    }
+
+    .fixearDivHistoria{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .imgHistoria {
+        width: 100%;
+        background-image: url("../imagenes/juego-estreno/historia3.png");
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin-bottom: 45px;
+    }
+
+    .imgs{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 20%;
+        width: 45%;
+        height: 100%;
+        margin: 0;
+        border-radius: 20px;
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .textos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ocultarTexto{
+        animation: ocultarTexto 2s linear forwards;
+    }
+
+    @keyframes ocultarTexto{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+
+
+
+    .imgs div {
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenidoHistoria {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        margin: 35px 0;
+        text-align: center;
+        padding: 0;
+    }
+
+    .contenidoHistoriaImagen {
+        width: 90%;
+        height: fit-content;
+        border-radius: 20px;
+        margin: 35px 0;
+    }
+
+    .contenidoHistoria p{
+        font-size: 25px;
+    }
+
+    .subirTexto{
+        animation: subirTexto 2s linear;
+    }
+
+    @keyframes subirTexto{
+        0%{
+            top: 0;
+        }
+        100%{
+            top: -55%;
+        }
+    }
+
+    .bajarTexto{
+        animation: bajarTexto 2s linear;
+    }
+
+    @keyframes bajarTexto{
+        0%{
+            top: 0;
+        }
+        100%{
+            top: 55%;
+        }
+    }
+
+    .imgDescripcion {
+        width: 100%;
+        background-image: url("../imagenes/juego-estreno/descripcion.png");
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contenidoDescripcion {
+        width: 80%;
+        height: 25%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contenidoDescripcion p{
+        color: white;
+        font-size: 25px;
+    }
+    .imgModosJuego {
+        width: 100%;
+        background-image: url("../imagenes/juego-estreno/caracteristicas.png");
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+
+    }
+
+    .contenidoModosJuego {
+        width: 30%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        margin: auto 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px;
+    }
+
+    .contenidoModosJuego ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contenidoModosJuego ul h2{
+        background: none;
+        font-size: 30px;
+        text-align: center;
+    }    
+    .contenidoModosJuego ul li{
+        background: none;
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }    
+
+    .imgPersonajes {
+        width: 100%;
+        background-image: url("../imagenes/juego-estreno/personajes.png");
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .seccionPersonajesCarrusel .itemPersonaje {
+        width: 60%;
+    }
+
+    .seccionPersonajesCarrusel div{
+        display: flex;
+    }
+
+    .seccionPersonajesCarrusel ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes moverIzquierda{
+        0%{
+            
+        }
+        100%{
+
+        }
+    }
+
+    .divImgPersonaje{
+        position: relative;
+        padding: 0;
+        margin: 0;
+    }
+    .itemPersonaje{
+        position: relative;
+        text-align: center;
+
+    }
+    .itemPersonaje h4{
+        position: absolute;
+        font-size: 35px;
+        color: rgb(86, 98, 255);
+        z-index: 10000;
+        -webkit-text-stroke: 2px black;
+    }
+
+
+    .itemPersonaje h5{
+        position: absolute;
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        -webkit-text-stroke: 2px black;
+    }
+
+    .divPadreListasPersonajes{
+        width: 100%;
+    }
+
+    .divListasPersonajes {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+
+    .slider1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .slider2 {
+        position: absolute;
+        left: 100%;
+        top: 0;
+    }
+
+    .desplazarIzquierdaLista1 {
+        left: -100%;
+        animation: desplazarIzquierdaLista1 .6s ease forwards;
+    }
+    .desplazarIzquierdaLista2 {
+        left: 0;
+        animation: desplazarIzquierdaLista2 .6s ease forwards;
+    }
+    @keyframes desplazarIzquierdaLista1{
+        0%{
+            left: 0;
+        }
+        100%{
+            left: -100%;
+        }
+    }
+    @keyframes desplazarIzquierdaLista2{
+        0%{
+            left: 100%;
+        }
+        100%{
+            left: 0%;
+        }
+    }
+
+    .desplazarDerechaLista1 {
+        left: -100%;
+        animation: desplazarDerechaLista1 1.5s ease forwards;
+    }
+    .desplazarDerechaLista2 {
+        left: 0;
+        animation: desplazarDerechaLista2 1.5s ease forwards;
+    }
+    @keyframes desplazarDerechaLista1{
+        0%{
+            left: -100%;
+        }
+        100%{
+            left: 0;
+        }
+    }
+    @keyframes desplazarDerechaLista2{
+        0%{
+            left: 0;
+        }
+        100%{
+            left: 100%;
+        }
+    }
+
+
+    .seccionPersonajesCarrusel .slider __titulo{
+        bottom: 0;
+    }
+
+    .seccionPersonajesCarrusel .slider __subtitulo{
+        top: 0;
+    }
+
+    .seccionPersonajesCarrusel .slider ._titulo{
+        top: -10px;
+    }
+
+
+    .seccionPersonajesCarrusel .slider ._subtitulo{
+        bottom: -15px;
+    }
+
+    .subirTitulos{
+        animation: subirTitulo 2s ease-in;
+        top: 10px;
+    }
+
+    .bajarSubtitulos{
+        animation: bajarSubtitulo 2s linear;
+        top: 5px;
+    }
+
+    .restaurarTitulos {
+        animation: restaurarTitulo 2s linear;
+        top: -10px;
+    }
+
+    .restaurarSubtitulos {
+        animation: restaurarSubtitulo 2s linear;
+        bottom: -15px;
+    }
+
+    @keyframes subirTitulo{
+        0%{
+            top: -10px;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            top: 10px;
+        }
+    }
+
+    @keyframes bajarSubtitulo{
+        0%{
+            top: -15px;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            top: 0px;
+        }
+    }
+
+    @keyframes restaurarTitulo{
+        0%{
+            top: 10px;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            top:-10px;
+        }
+    }
+
+    @keyframes restaurarSubtitulo{
+        0%{
+            bottom: -15px;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            bottom:0;
+        }
+    }
+
+   .seccionPersonajesCarrusel .itemPersonaje .auto1{
+        background-image: "../imagenes/personajesCars/auto1.png";
+        background-size: cover;
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto2{
+        background-image: "../imagenes/personajesCars/auto2.png";
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto3{
+        background-image: "../imagenes/personajesCars/auto3.png";
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto4{
+        background-image: "../imagenes/personajesCars/auto4.png";
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto5{
+        background-image: "../imagenes/personajesCars/auto5.png";
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto6{
+        background-image: "../imagenes/personajesCars/auto6.png";
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto7{
+        background-image: "../imagenes/personajesCars/auto7.png";
+    }
+    .seccionPersonajesCarrusel .itemPersonaje .auto8{
+        background-image: "../imagenes/personajesCars/auto8.png";
+    }
+
+    .contenidoPersonajesCaracteristicas {
+        width: 30%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        margin: auto 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px;
+    }
+
+    .contenidoPersonajesCaracteristicas ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contenidoPersonajesCaracteristicas ul h2{
+        background: none;
+        font-size: 30px;
+        text-align: center;
+    }    
+    .contenidoPersonajesCaracteristicas ul li{
+        background: none;
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }    
+
+    .imgCircuitos {
+        width: 100%;
+        background-image: url("../imagenes/juego-estreno/circuitos.png");
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .contenidoCircuitos {
+        width: 30%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        margin: auto 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px;
+    }
+
+    .contenidoCircuitos ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contenidoCircuitos ul h2{
+        background: none;
+        font-size: 30px;
+        text-align: center;
+    }    
+    .contenidoCircuitos ul li{
+        background: none;
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .imgPlataformas {
+        width: 100%;
+        background-image: url("../imagenes/juego-estreno/plataformas.png");
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .contenidoPlataformas {
+        width: 30%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        margin: auto 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px;
+    }
+
+    .contenidoPlataformas ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contenidoPlataformas ul h2{
+        background: none;
+        font-size: 30px;
+        text-align: center;
+    }    
+    .contenidoPlataformas ul li{
+        background: none;
+        font-size: 25px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .caracteristica {
+        position: relative;
+        left: -100%;
+    }
+
+    .mostrarCaracteristicas {
+        animation: mostrarCaracteristica .8s linear;
+        left: 0;
+    }
+
+    @keyframes mostrarCaracteristica{
+        0%{
+            left: -100%;
+        }
+        100%{
+            left: 0;
+        }
+    }
+
+    .ocultarCaracteristicas {
+        animation: ocultarCaracteristica 1.2s linear;
+        left: -100%;
+    }
+
+    @keyframes ocultarCaracteristica{
+        0%{
+            left: 0;
+        }
+        100%{
+            left: -100%;
+        }
+    }
+
+    .carruselCars .tituloSeccion {
+        margin-bottom: 10px;
+    }
+
+    .seccionPersonajesCarrusel {
+        height: fit-content;
+        margin-bottom: 25px;
+    }
+
+    main section.seccionPersonajesCarrusel {
+        width: 100%;
+        position: relative;
+    }
+    
+    main section.seccionPersonajesCarrusel .flecha {
+        width: 25px;
+        padding: 20px;
+        background-color: #FEF7F7;
+        border-radius: 100%;
+        cursor: pointer;
+        position: absolute;
+    }
+    
+    main section.seccionPersonajesCarrusel .flechaIzquierda {
+        left: 40px;
+        top: 170px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+    
+    main section.seccionPersonajesCarrusel .flechaDerecha {
+        right: 40px;
+        top: 170px;
+        transform: translate(50%, -50%);
+        
+    }
+    
+    main section.seccionPersonajesCarrusel ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+        overflow: hidden;
+        margin: 0 5px;
+        scroll-behavior: [auto smooth];
+    }
+    
+    main section.seccionPersonajesCarrusel ul li {
+        position: relative;
+        width: fit-content;
+        height: 320px;
+        padding: 2px 0px;
+        margin: 2px 5px;
+        background-color: transparent;
+        border-radius: 0;
+        border: solid 2px rgb(86, 98, 255);
+    }
+    
+    main section.seccionPersonajesCarrusel ul li:hover{
+        border: solid 2px rgb(194, 52, 147);
+    }
+    
+    main section.seccionPersonajesCarrusel ul li img{
+        width: 270px;
+    }
+    
+    .carruselCars{
+        height: fit-content;
+        margin-bottom: 140px;
+    }
+    
+    .carruselCars .textoTitulo{
+        top: -30px;
+    }
+    
+    .seccionPersonajes ul li h2{
+        background: none;
+    }
+    /************************************************************INDEX.HTML*/ 
+
+    main section.seccionBannerJuegoEstreno{
+        position: relative;
+    }
+
+     main section.seccionBannerJuegoEstreno img{
+        height: 418px;
+        margin: 27px 0 10px 0;
+    }
+
+    main section.seccionBannerJuegoEstreno .contenidoBanner{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+    }
+    .tituloBannerJuegoEstreno {
+        opacity: 1;
+        position: absolute;
+        top: 35%;
+        left: 30%;
+        z-index: 100000;
+        font-size: 40px;
+        color: white;
+        text-align: center;
+        margin: 0 auto;
+        animation: animarTitulo 5s ease forwards;
+    }
+
+    @keyframes animarTitulo {
+        0%{
+            top: -100%;
+            opacity: 0;
+        }
+        100%{
+            top: 35%;
+            opacity: 1;
+        }
+    }
+
+    main section.seccionBannerJuegoEstreno .contenidoBanner h2 {
+        font-size: 20px;
+        margin: 0 0 3px 0;
+        text-align: start;
+        padding: 0;
+        z-index: 10;
+    }
+    
+    main .contenidoBanner p {
+        display: block;
+        font-size: 24px;
+        margin: 5px 0 8px 0;
+    }
+    
+    main .contenidoBanner button {
+        width: 148px;
+        height: 30px;
+        font-size: 24px;
+        margin: 8px 0 0 0;
+        padding-bottom: 40px;
+    }
+
+     main h2 {
+         font-size: 24px;
+         padding: 5px 20px;
+     }
+
+     main section ul li {
+        width: fit-content;
+        height: 255px;
+        margin: 0 5px;
+        padding: 2px 10px;
+
+     }
+
+     main section ul li img {
+        width: 150px;
+        height: 145px;
+    }
+
+    .slider h3:hover{
+        color: whitesmoke;
+    }
+    
+    main section ul li h3 {
+        font-size: 16px;
+    }
+    
+    main section ul li button, main section ul li button.btnComprar {
+        width: 114px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    main section ul li button.btnComprar {
+        width: fit-content;
+        padding: 2px 3px;
+        font-size: 14px;
+        background-color: #FEF7F7;
+        color: #272727;
+    }
+
+    .divContenidoBtnComprar p{
+        font-size: 18px;
+    }
+
+    .divContenidoBtnComprar span {
+        font-size: 30px;
+    }
+
+    main section .flecha {
+        width: 25px;
+        padding: 20px;
+    }
+
+    footer .enlacesOcultos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footerNav ul{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .footerNav{
+        display: flex;
+        justify-content: center;
+     }
+    
+     footer .footerNav .enlacesFooter li{
+        padding: 10px;
+    }
+    
+     footer button{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         background: none;
+         height: 30px;
+         padding: 10px 50px;
+     }
+
+    .footerNav ul li{
+        padding-top: 20px;
+        margin: 0 30px;
+    }
+
+    footer img.logoPagina {
+        padding-top: 50px;
+        width: 7vw;
+     }
+
+     .flechaDropdownFooter{
+         display: none;
+     }
+
+     footer div.contenidoFooter {
+        flex-direction: row;
+     }
+    
+     footer div.contenidoFooter {
+        justify-content: space-around;       
+     }
+    
+     footer div.listasEnlaces {
+        margin: 0 0 15px 0;
+     }
+    
+     footer div.listasEnlaces ul{
+        margin: 5px 0px;
+        padding: 0;
+     }
+    
+     footer div.redesSociales ul{
+        display: block;
+        margin: 1% 1%;
+     }
+    
+     footer div.redesSociales ul li{
+        margin: 1% 1%;
+     }
+    
+     footer div.redesSociales ul li img{
+        width: 3vw;
+     }
+    
+     footer div.copiright {
+         background-color: #AEADBF;
+     }
+    
+     footer div.copiright h3 {
+        font-size: 16px;
+        padding: 4px 0;
+     }
+
+     footer h4 {
+         font-size: 20px;
+         text-align: center;
+     }
+  
+     #footer {
+        margin-top: 400px;
+     }
+ }
+
+
+ /*4 en linea*/
+ div.contenidoJuego {
+     justify-content: space-around;
+ }
+
+div.contenidoJuego div.divConfiguracionJuego{
+    width: 90%;
+    background-color: rgb(28, 68, 141);
+}
+
+div.contenidoJuego div.divConfiguracionJuego h2#tituloConfiguracion{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    border-radius: 0;
+    background-color: black;
+    margin: 0;
+    padding: 20px 0;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego{
+    width: 100%;
+    align-content: center;
+    margin: 50px auto;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego h3{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego h3:hover{
+    cursor: auto;
+    
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego div{
+    width: 100%;
+    align-content: center;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego button{
+    width: 80px;
+    margin: 5px;
+    background-color: rgb(45, 105, 218);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divDimensionJuego button.agrandarBotonDimension {
+    background-color: white;
+    color: black;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores{
+    width: 100%;
+    margin: 50px 0;
+    background-color: rgb(28, 68, 141);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores button{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    margin: 15px 8px;
+    padding: 5px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores button.agrandarFicha {
+    border: solid 5px red;
+    width: 55px;
+    height: 55px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores div.botones{
+    margin: 0 auto;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divBtnIniciarPartida{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    margin-bottom: 10px;
+}
+div.contenidoJuego div.divConfiguracionJuego div.divBtnIniciarPartida button.deshabilitar{
+    background-color: gray;
+    color: white;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divBtnIniciarPartida button.deshabilitar:hover{
+    cursor: not-allowed;
+
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divBtnIniciarPartida button{
+    padding: 15px 20px;
+    background-color: rgb(29, 172, 100);
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+div.contenidoJuego div.divConfiguracionJuego div.divFichasJugadores img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+section.breadcrumb{
+    width: fit-content;
+    position: relative;
+    top: 70px;
+    left: 30px;
+}
+
+section.breadcrumb ul{
+    display: flex;
+    list-style: none;
+}
+
+section.breadcrumb li{
+    list-style: none;
+    position: relative;
+}
+
+section.breadcrumb li p{
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+
+section.breadcrumb img{
+    width: 100px;
+    height: 40px;
+    opacity: 40%;
+}
+
+section.breadcrumb img.home{
+    width: 70px;
+}
+
+section.breadcrumb img:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+section.breadcrumb p:hover {
+    cursor: pointer;
+}
+
+ main div.titulo {
+    width: 100%;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+ main div.titulo img {
+     width: 50%;
+ }
+
+ main div.titulo h1 {
+    text-align: center;
+    color: #FEF7F7;
+    font-size: 40px;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+main div.contenidoJuego {
+    width: 100%;
+}
+
+main div.imagenJuego {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+}
+
+main #canvas .ocultar {
+    display: none;
+}
+
+main div.imagenJuego img {
+    width: 100%;
+    opacity: 70%;
+}
+
+main div.imagenJuego button {
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    top: 47%;
+    left: 43%;
+    font-size: 2vw;
+    text-align: center;
+}
+
+main div.contenidoJuego {
+    display: flex;
+    justify-content: center;
+}
+
+main div.botones4enLinea {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    width: 3%;
+}
+
+div.botones4enLinea img{
+    width: 40px;
+    margin: 5px;
+}
+
+.favorito {
+    opacity: 40%;
+}
+
+.seleccionado {
+    opacity: 100%;
+}
+
+main div.botones4enLinea div.contenedorCompartir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ocultar{
+    display: none;
+}
+
+div.botones4enLinea img:hover{
+    cursor: pointer;
+    animation: ease-in;
+}
+
+main section.slider {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+}
+
+main section.slider li{
+    margin: 0 30px;
+}
+
+main section.slider img{
+    height: 120px;
+    width: auto;
+    margin: 0 20px;
+}
+
+main section.slider img:hover{
+    transform: scale(1.5);
+}
+
+main section.slider ul.galeria {
+    display: flex;
+    animation: cambio 20s infinite;
+    width: 400%;
+}
+
+.comentario span {
+    font-size: 6px;
+}
+
+.comentario img {
+    width: 12px;
+    border-radius: 50%;
+}
+
+div.comentario div.contenido img{
+    width: 30px;
+    height: 43px;
+}
+
+.comentario p {
+    font-size: 15px;
+}
+
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+main section.slider ul.galeria li {
+    width: 200px;
+    list-style: none;
+    background-color: transparent;
+}
+
+main section.instrucciones div.titulo{
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.instrucciones div.titulo img{
+    width: 100%;
+}
+
+main section.instrucciones div.titulo h2{
+    position: absolute;
+    top: 18%;
+    text-align: center;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+main section.instrucciones div.contenido{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.instrucciones div.contenido img{
+    width: 100%;
+    height: 500px;
+}
+
+main section.instrucciones div.contenido p{
+    position: absolute;
+    background-color: transparent;
+    font-size: 27px;
+    color: #FEF7F7;
+}
+
+main section.instrucciones div.contenido p.p1{
+    top: 15%;
+    left: 22%;
+    width: 65%;
+}
+
+main section.instrucciones div.contenido p.p2{
+    top: 40%;
+    left: 18%;
+    width: 65%;
+}
+
+main section.instrucciones div.contenido :last-child{
+    top: 70%;
+    left: 14%;
+    width: 65%;
+}
+
+main section.comunidad {
+    background-color: #D8D6FF;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+main section.comunidad div.titulo {    
+    width: 30%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.comunidad div.titulo img{
+    width: 100%;
+}
+
+main section.comunidad div.titulo h2{
+    position: absolute;
+    top: 18%;
+    text-align: center;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+main section.comunidad div.escribirComentario { /*COMENTARIOS*/
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+main section.comunidad div.escribirComentario  img{
+    width: 6%;
+    margin-right: 5px;
+}
+
+main section.comunidad div.escribirComentario  input{
+    width: 91%;
+    border: solid rgb(138, 138, 138) 3px;
+    background-color: #FEF7F7;
+    height: 35px;
+    margin: auto 0;
+    padding-left: 9px;
+    color:  rgb(138, 138, 138) 3px;;
+}
+
+main section.comunidad div.escribirComentario  button{
+    background-color: #272727;
+    color: #FEF7F7;
+    height: 35px;
+    margin-left: 85%;
+    padding: 0 6px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+main section.comunidad div.comentarios {
+    width: 50%;
+    margin: 0 auto;
+}
+
+main section.comunidad div.comentarios div.comentario{
+    border-top: 1px solid #a5a3a3;
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido{
+    display: flex;
+    justify-content: space-between;
+    color: #1F0328;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido div{
+    display: flex;
+    justify-content: start;
+    width: 88%;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido img{
+    width: 6%;
+    margin-right: 4px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido p.hora{
+    font-size: 11px;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido span{
+    font-size: 18px;
+    font-weight: bold;
+    color: #272727;
+}
+
+main section.comunidad div.comentarios div.comentario div.contenido p{
+    color: #272727;
+    font-size: 16px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios img{
+    width: 15px;
+    margin-right: 7px;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios img:hover{
+    cursor: pointer;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios p{
+    margin-right: 7px;
+    color: #969393;
+}
+
+main section.comunidad div.comentarios div.comentario div.botonesComentarios h4{
+    font-size: 12px;
+    color: #969393;
+    margin-left: 7px;
+}
+
+.estirar {
+    height: 100%;
+    
+}
+
+.itemPersonaje{
+    position: relative;
+}
+
+
+
+.animarCarruselDerecha{
+    animation: animarCarruselDerecha .5s ease-in-out;
+}
+
+.animarCarruselIzquierda{
+    animation: animarCarruselIzquierda .5s ease-in-out;
+}
+
+@keyframes animarCarruselDerecha{
+    0%{
+        transform: translateX(100px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes animarCarruselIzquierda{
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.itemPersonaje:hover{
+    position: relative;
+    animation: girarCardPersonaje .5s linear;
+}
+@keyframes girarCardPersonaje{
+    0%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+
+.divError{
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+
+.divError h6{
+    font-size: 20px;
+    color: rgb(255, 229, 217);
+    text-align: center;
+}
+
+.ocultarMenu{
+    animation: ocultarMenu 1.5s linear forwards;
+}
+
+@keyframes ocultarMenu{
+    0%{
+        display: block;
+        position: relative;
+        left: 0;
+        opacity: 1;
+    }
+    100%{
+        display: block;
+        left: 100%;
+        opacity: .2;
+        visibility: hidden;
+    }
+}
